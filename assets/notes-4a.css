@@ -135,6 +135,10 @@ ul.kinds{margin:6px 0 0;padding-left:1.1em}
   .notes .chip{font-size:.8rem;padding:2px 7px}
 }
 
+/* 教學插圖 */
+figure.fig.pic { padding: 6px; }
+figure.fig.pic img { width: 100%; height: auto; display: block; border-radius: 6px; }
+figure.fig.pic a { display: block; }
 @media print {
   .scope, .toc { display: none !important; }
   body.s12 .later { display: none !important; }
