@@ -1,0 +1,1112 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>社會四上期中複習</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: 地圖紙張感 — 單欄閱讀，等高線色票做區塊標記，最後是可點選的練習題 */
+:root{
+  --paper:#f3f6f1; --card:#ffffff; --ink:#1f2a24; --muted:#5b6b62; --line:#d5ded7;
+  --plain:#8fbf6a; --hill:#d9b25a; --mount:#a8693c; --water:#2f7fb8; --accent:#c2412d;
+  --ok:#2e8b57; --okbg:#e3f3e9; --bad:#c2412d; --badbg:#fbe9e5; --hl:#fff1b8;
+  --f-disp:"LXGW WenKai TC","Kaiti TC","BiauKai",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#141a17; --card:#1d2420; --ink:#e7eee9; --muted:#9fb0a6; --line:#2f3a34;
+  --plain:#7fb05c; --hill:#d0a74e; --mount:#c98a5a; --water:#5aa6dd; --accent:#ef7a63;
+  --ok:#5cc18a; --okbg:#1c3327; --bad:#ef7a63; --badbg:#3a221d; --hl:#4a4214; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141a17; --card:#1d2420; --ink:#e7eee9; --muted:#9fb0a6; --line:#2f3a34;
+  --plain:#7fb05c; --hill:#d0a74e; --mount:#c98a5a; --water:#5aa6dd; --accent:#ef7a63;
+  --ok:#5cc18a; --okbg:#1c3327; --bad:#ef7a63; --badbg:#3a221d; --hl:#4a4214; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--f-disp);text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:2rem}
+h2{font-size:1.45rem;display:flex;align-items:center;gap:10px}
+h2 .pg{font-family:var(--f-body);font-size:.75rem;font-weight:500;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 9px;letter-spacing:.04em}
+h3{font-size:1.1rem}
+.unit{font-family:var(--f-disp);font-size:1.15rem;color:var(--accent);border-top:3px double var(--line);padding-top:14px;letter-spacing:.06em}
+p{margin:0}
+.lede{color:var(--muted)}
+.contour{height:10px;background:linear-gradient(90deg,var(--plain) 0 30%,var(--hill) 30% 55%,var(--mount) 55% 80%,var(--water) 80%);border-radius:2px}
+section{display:flex;flex-direction:column;gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+ul{margin:0;padding-left:1.2em}
+li+li{margin-top:4px}
+mark{background:var(--hl);color:inherit;padding:0 2px;border-radius:2px}
+.trap{border-left:4px solid var(--accent);background:var(--badbg);border-radius:0 8px 8px 0;padding:10px 14px}
+.trap b{color:var(--accent)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:.95rem}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font-weight:700;color:var(--muted);font-size:.85rem;letter-spacing:.04em}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+/* 階層圖 */
+.tree{overflow-x:auto}
+.tree svg{min-width:640px;width:100%;height:auto;display:block}
+.tree text{font-family:var(--f-body);fill:var(--ink)}
+/* terrain ladder */
+.ladder svg{width:100%;height:auto;display:block}
+.ladder text{font-family:var(--f-body);fill:var(--ink)}
+/* quiz */
+.score{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding-block:8px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.score b{font-variant-numeric:tabular-nums;font-size:1.1rem}
+button{font:inherit;color:inherit}
+.reset{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:4px 12px;cursor:pointer}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.q .tag{font-size:.78rem;color:var(--muted);letter-spacing:.05em}
+.q .stem{font-weight:500}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{border:1.5px solid var(--line);background:var(--paper);border-radius:8px;padding:6px 12px;cursor:pointer;text-align:left;min-height:40px}
+.opt:hover{border-color:var(--water)}
+.opt:focus-visible,.reset:focus-visible{outline:3px solid var(--water);outline-offset:2px}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg);text-decoration:line-through}
+.opt:disabled{cursor:default}
+.why{font-size:.93rem;border-radius:8px;padding:8px 12px;background:var(--okbg)}
+.why.no{background:var(--badbg)}
+footer{color:var(--muted);font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){.why{animation:in .25s ease-out}@keyframes in{from{transform:translateY(-4px)}}}
+</style>
+
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:10px">
+  <a href="./" style="display:inline-block;font-size:.95rem;color:var(--water);text-decoration:none;margin-bottom:4px">← 回首頁</a>
+
+  <div class="contour" aria-hidden="true"></div>
+  <h1>社會四上 · 期中複習本</h1>
+  <p class="lede">康軒社會 四上 第一到五單元，整本課本 p.6–107。先讀重點和「易錯點」，最後做練習題，點選後立刻看答案和理由。</p>
+</header>
+
+<div class="unit">第一單元　家鄉的自然環境</div>
+<section>
+  <h2>單元階層圖 <span class="pg">p.6、p.9</span></h2>
+  <p class="lede">課本教的「階層圖」：主概念 → 次概念 → 說明。整個單元就是這張圖。</p>
+  <div class="tree box" style="padding:10px">
+  <svg viewBox="0 0 680 300" role="img" aria-label="家鄉的自然環境階層圖">
+    <g stroke="var(--muted)" stroke-width="1.5" fill="none">
+      <path d="M340 52 V72 M110 72 H570 M110 72 V92 M340 72 V92 M570 72 V92"/>
+      <path d="M110 128 V142 M35 142 H185 M35 142 V156 M85 142 V156 M135 142 V156 M185 142 V156"/>
+      <path d="M340 128 V142 M300 142 H380 M300 142 V156 M380 142 V156"/>
+      <path d="M570 128 V142 M495 142 H645 M495 142 V156 M545 142 V156 M595 142 V156 M645 142 V156"/>
+    </g>
+    <rect x="240" y="14" width="200" height="38" rx="8" fill="var(--accent)"/>
+    <text x="340" y="39" text-anchor="middle" font-size="17" font-weight="700" style="fill:#fff">家鄉的自然環境</text>
+    <rect x="40" y="92" width="140" height="36" rx="8" fill="var(--card)" stroke="var(--water)" stroke-width="2"/>
+    <text x="110" y="116" text-anchor="middle" font-size="15" font-weight="700">家鄉在哪裡</text>
+    <rect x="270" y="92" width="140" height="36" rx="8" fill="var(--card)" stroke="var(--plain)" stroke-width="2"/>
+    <text x="340" y="116" text-anchor="middle" font-size="15" font-weight="700">家鄉的地形</text>
+    <rect x="480" y="92" width="180" height="36" rx="8" fill="var(--card)" stroke="var(--hill)" stroke-width="2"/>
+    <text x="570" y="116" text-anchor="middle" font-size="15" font-weight="700">氣候、水資源與生活</text>
+    <g font-size="13.5" text-anchor="middle">
+      <text writing-mode="tb" x="35" y="162">從地圖看家鄉</text>
+      <text writing-mode="tb" x="85" y="162">家鄉與地圖</text>
+      <text writing-mode="tb" x="135" y="162">地圖的要素</text>
+      <text writing-mode="tb" x="185" y="162">家鄉的電子地圖</text>
+      <text writing-mode="tb" x="300" y="162">地形的種類</text>
+      <text writing-mode="tb" x="380" y="162">地形與生活</text>
+      <text writing-mode="tb" x="495" y="162">家鄉的氣候</text>
+      <text writing-mode="tb" x="545" y="162">氣候與居民生活</text>
+      <text writing-mode="tb" x="595" y="162">家鄉的水資源</text>
+      <text writing-mode="tb" x="645" y="162">水資源與生活</text>
+    </g>
+  </svg>
+  </div>
+  
+</section>
+
+<section>
+  <h2>單元開頭：頭城的地方特色 <span class="pg">p.8–9</span></h2>
+  <div class="box">
+    <p>圖畫裡哪些和<mark>自然環境</mark>有關？</p>
+    <div class="tbl"><table>
+      <tr><th>圖中看到的</th><th>代表什麼</th><th>和自然環境有關？</th></tr>
+      <tr><td>海上的海豚</td><td>可以搭船賞鯨</td><td>有關（海洋）</td></tr>
+      <tr><td>有人衝浪</td><td>靠近海邊</td><td>有關（海浪）</td></tr>
+      <tr><td>海上的島</td><td>龜山島</td><td>有關</td></tr>
+      <tr><td>圓圓的水果</td><td>頭城特產甜心芭樂</td><td>有關（土地、氣候種出的作物）</td></tr>
+      <tr><td>斜斜的建築</td><td>蘭陽博物館，造型像躍出海面的鯨魚</td><td>是人蓋的建築</td></tr>
+      <tr><td>紅紙寫「慶讚中元」</td><td>頭城搶孤活動</td><td>是節慶活動</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <h2>家鄉在哪裡 <span class="pg">p.10–11</span></h2>
+  <div class="box">
+    <p>我們<mark>出生、成長，或是長期生活</mark>的地方，都是我們的家鄉，所以<mark>家鄉可能不只一個</mark>。</p>
+    <ul>
+      <li>臺南出生、長大 → 家鄉在臺南市，位在臺灣<b>南部</b></li>
+      <li>嘉義出生、從小住新北市 → 覺得家鄉在新北市，位在臺灣<b>北部</b></li>
+      <li>花蓮縣位在臺灣<b>東部</b>，有高大山脈，也有廣闊海洋</li>
+      <li>現在住新竹市（地圖上看起來非常小）、小學前住臺中市 → <b>兩個都是家鄉</b></li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>「家鄉只有一個，就是出生的地方」是錯的。長期生活的地方也算家鄉。</div>
+</section>
+
+<section>
+  <h2>家鄉與地圖：四種地圖 <span class="pg">p.12–13</span></h2>
+  <p>不同種類的地圖，顯示的資訊不一樣。依照<mark>想了解的主題</mark>選地圖。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>想知道</th><th>看哪一種地圖</th><th>課本例子</th></tr>
+    <tr><td>家鄉有哪些行政區</td><td><b>行政區圖</b></td><td>臺北市共有 12 個行政區（文山區在最南邊）</td></tr>
+    <tr><td>主要交通路線</td><td><b>交通路線圖</b></td><td>鐵路、高速鐵路、國道、省道、捷運</td></tr>
+    <tr><td>地勢高低、河川分布</td><td><b>地形圖</b></td><td>用顏色深淺表示高度，有河川流過</td></tr>
+    <tr><td>有哪些景點</td><td><b>觀光導覽圖</b></td><td>臺北101、故宮、動物園、龍山寺</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>「地勢高低」要看<b>地形圖</b>，不是行政區圖；「景點」要看<b>觀光導覽圖</b>，不是交通路線圖。</div>
+</section>
+
+<section>
+  <h2>地圖的四個要素 <span class="pg">p.14</span></h2>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>要素</th><th>作用</th></tr>
+    <tr><td><b>圖名</b></td><td>地圖的名稱，通常根據<mark>主題或區域範圍</mark>來命名，例如「嘉義市東區地圖（局部）」</td></tr>
+    <tr><td><b>方向標</b></td><td>表示地圖上的方位（北、東、南、西）。沒有方向標就不知道哪邊是北方</td></tr>
+    <tr><td><b>比例尺</b></td><td>表示<mark>實際距離在地圖上被縮小的程度</mark></td></tr>
+    <tr><td><b>圖例</b></td><td>用<mark>簡單的符號</mark>，表示實際景物的說明（學校、銀行、派出所、公園、醫院…）</td></tr>
+  </table></div>
+  <div class="box">
+    <h3>比例尺怎麼讀</h3>
+    <svg viewBox="0 0 360 60" style="max-width:360px;width:100%;height:auto" role="img" aria-label="比例尺 0 75 150 公尺">
+      <rect x="20" y="22" width="120" height="10" fill="var(--ink)"/>
+      <rect x="140" y="22" width="120" height="10" fill="var(--card)" stroke="var(--ink)" stroke-width="1.5"/>
+      <g font-size="13" text-anchor="middle" style="fill:var(--ink);font-family:var(--f-body)">
+        <text x="20" y="16">0</text><text x="140" y="16">75</text><text x="260" y="16">150</text>
+        <text x="305" y="16">公尺</text>
+        <text x="80" y="52">75 公尺</text><text x="200" y="52">75 公尺</text>
+      </g>
+    </svg>
+    <p>黑色一段或白色一段的長度，<b>各代表實際距離 75 公尺</b>。黑白兩段加起來是 150 公尺。</p>
+  </div>
+  <div class="trap"><b>易錯：</b>一段代表 75 公尺，不是 150 公尺。150 是兩段加起來。</div>
+</section>
+
+<section>
+  <h2>家鄉的電子地圖 <span class="pg">p.15–17</span></h2>
+  <div class="box">
+    <ul>
+      <li><b>輸入搜尋地點</b>：輸入地點或地址，就能快速找到位置</li>
+      <li><b>放大、縮小</b>：點擊「＋」「－」號，依需求縮放地圖範圍</li>
+      <li><b>切換模式</b>：點選左下角，切換不同的呈現模式</li>
+    </ul>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>模式</th><th>適合用來</th><th>畫面上的顏色</th></tr>
+    <tr><td><b>地圖模式</b></td><td>更快找到<mark>重要道路或景物的名稱</mark></td><td><span class="sw" style="background:#9ccc8a"></span>綠色區塊：公園、綠地<br><span class="sw" style="background:#f2c94c"></span>黃色線條：主要道路<br><span class="sw" style="background:#5b9bd5"></span>藍色線條：河流（溪）</td></tr>
+    <tr><td><b>衛星模式</b></td><td>看見真實的道路、<mark>密集的房子</mark>，以及<mark>山地和樹林</mark></td><td><span class="sw" style="background:#a9a9a0"></span>灰白色一大塊：密集的房子（市區）<br><span class="sw" style="background:#2f4a2a"></span>深綠色：山地、樹林</td></tr>
+  </table></div>
+  <div class="box">
+    <h3>社會充電站：利用地圖探索家鄉（臺北市大同區）<span class="pg" style="margin-left:6px">p.18–19</span></h3>
+    <p>四個步驟，順序要記得：</p>
+    <p><b>1 查詢電子地圖</b> → <b>2 設計圖例</b> → <b>3 製作地圖</b> → <b>4 參訪景點</b></p>
+    <ul>
+      <li>設計圖例時，可把<mark>相近的景物整併為同一種符號</mark>（例：圖書館畫成一本書、公園用秋千）</li>
+      <li>規畫戶外教育時，要估算<b>走路、用餐、在每個景點停留</b>的時間</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>地形的種類 <span class="pg">p.20–21</span></h2>
+  <p>地形是指<mark>地表高低起伏的型態</mark>。可以用實地觀察、空拍照片、閱讀地圖來認識。</p>
+  <div class="ladder box" style="padding:10px 12px">
+    <svg viewBox="0 0 640 190" role="img" aria-label="五種地形高低示意">
+      <path d="M10 160 H110 C130 160 130 130 150 130 H220 C240 130 240 150 260 150 H320 C380 150 380 100 430 95 C470 90 480 30 540 25 C590 22 600 120 630 160" fill="none" stroke="var(--plain)" stroke-width="4"/>
+      <line x1="10" y1="100" x2="630" y2="100" stroke="var(--accent)" stroke-dasharray="5 5" stroke-width="1.5"/>
+      <text x="620" y="94" text-anchor="end" font-size="12" style="fill:var(--accent)">1000 公尺</text>
+      <g font-size="15" font-weight="700" text-anchor="middle">
+        <text x="60" y="152">平原</text><text x="185" y="122">台地</text><text x="290" y="142">盆地</text><text x="410" y="88" >丘陵</text><text x="540" y="18">山地</text>
+      </g>
+      <g font-size="12" text-anchor="middle" style="fill:var(--muted)">
+        <text x="60" y="182">平坦廣闊</text><text x="185" y="182">頂部平坦、邊緣陡坡</text><text x="290" y="182">四周高、中間低平</text><text x="410" y="182">≤1000m、坡度較平緩</text><text x="545" y="182">≥1000m、高聳</text>
+      </g>
+    </svg>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>地形</th><th>特徵（關鍵字）</th><th>課本例子</th></tr>
+    <tr><td><b>平原</b></td><td>平坦廣闊</td><td>宜蘭平原</td></tr>
+    <tr><td><b>盆地</b></td><td>四周高，中間低平</td><td>埔里盆地（南投）</td></tr>
+    <tr><td><b>台地</b></td><td>頂部平坦，邊緣以陡坡和低地相接</td><td>大肚台地（臺中）</td></tr>
+    <tr><td><b>丘陵</b></td><td>高度<mark>不超過 1000 公尺</mark>、坡度較平緩</td><td>苗栗丘陵</td></tr>
+    <tr><td><b>山地</b></td><td>高聳，高度在 <mark>1000 公尺以上</mark></td><td>中央山脈</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>盆地和台地最容易搞混。<b>盆地</b>像臉盆，四周高、中間低；<b>台地</b>像桌子，上面平、旁邊是陡坡。丘陵和山地用 <b>1000 公尺</b>分開。</div>
+</section>
+
+<section>
+  <h2>地形與生活 <span class="pg">p.22–23</span></h2>
+  <div class="box">
+    <p><b>平原、盆地、台地</b>（較平坦）→ 有利於<mark>種植作物、建築房屋、交通建設</mark> → 形成<b>農田遍布的農村</b>，或<b>高樓林立的都市</b>。<b>靠海的平原</b> → 可能看到一池池<b>魚塭的漁村</b>。</p>
+    <p><b>丘陵、山地</b>（起伏較大）→ 居民活動<mark>受到限制</mark> → 多選在<b>坡度較平緩的山坡地</b>開闢<b>茶園、果園</b>。</p>
+    <p>地形影響居民的生活方式；居民的活動也<mark>改變了地表的景觀與樣貌</mark>。</p>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>地方</th><th>地形</th><th>居民生活</th></tr>
+    <tr><td>臺東縣 池上鄉</td><td>平原</td><td>一大片稻田</td></tr>
+    <tr><td>臺北市 信義區</td><td>盆地</td><td>四周山圍繞、地形平坦、交通便利，熱鬧的大都市</td></tr>
+    <tr><td>屏東縣 枋寮鄉</td><td>平原（靠海岸）</td><td>很多魚塭</td></tr>
+    <tr><td>新北市 石碇區</td><td>丘陵</td><td>氣候適宜、排水良好 → 種茶、製茶</td></tr>
+    <tr><td>臺中市 和平區</td><td>山地</td><td>大多以種植水果為生（甜柿）</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>臺北市信義區是<b>盆地</b>，不是平原；石碇種茶是<b>丘陵</b>，不是山地。</div>
+</section>
+
+<section>
+  <h2>家鄉的氣候 <span class="pg">p.24–25</span></h2>
+  <div class="box">
+    <p>氣候是指<mark>一個地區長時間的天氣平均狀況</mark>。認識氣候，可以從<b>氣溫圖</b>和<b>雨量圖</b>開始。</p>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>地方</th><th>特色</th><th>圖上的數字</th></tr>
+    <tr><td>宜蘭</td><td><b>夏熱冬冷</b></td><td class="num">7月 28.9°C ／ 1月 16.6°C</td></tr>
+    <tr><td>屏東 恆春</td><td><b>四季氣溫高</b></td><td class="num">7月 28.7°C ／ 1月 21.1°C</td></tr>
+    <tr><td>基隆</td><td><b>四季多雨</b></td><td class="num">只有 7月 119.5 毫米低於 200</td></tr>
+    <tr><td>高雄</td><td><b>夏季多雨、冬季少雨</b></td><td class="num">6–8月都超過 300 毫米（8月最多 512.4）<br>2月最少，只有 17.7 毫米</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>宜蘭和恆春的 7 月氣溫差不多（28.9 和 28.7），真正的差別在<b>冬天</b>：宜蘭 1 月只有 16.6°C，恆春還有 21.1°C。所以判斷「四季氣溫高」要看最冷的月份。</div>
+</section>
+
+<section>
+  <h2>氣候與居民的生活 <span class="pg">p.26</span></h2>
+  <div class="box">
+    <p>居民會根據不同的氣候，選擇不同的<mark>建材</mark>、種植適合的<mark>作物</mark>、從事多樣化的<mark>休閒活動</mark>，發展出合適的生活方式。</p>
+    <ul>
+      <li><b>建材</b>：新北市瑞芳區<b>九份</b>常常下雨 → 屋頂用<b>瀝青製成的油毛氈</b>，黑色屋頂是很好的防雨建材</li>
+      <li><b>作物</b>：<b>澎湖</b>七美鄉雨下得比較少 → 種需水較少的耐旱作物<b>花生</b></li>
+      <li><b>休閒活動</b>：屏東天氣炎熱 → 夏天到海邊堆沙堡、戲水；高雄夏天高溫 → 待在涼快的地方吃冰</li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>九份是<b>多雨</b>（所以防雨屋頂），澎湖是<b>少雨</b>（所以種耐旱的花生）。兩個剛好相反，不要對調。</div>
+</section>
+
+<section>
+  <h2>家鄉的水資源 <span class="pg">p.27</span></h2>
+  <div class="box">
+    <p><mark>河川、湖泊、地下水、海洋</mark>等，都是家鄉重要的水資源。</p>
+    <ul>
+      <li>河川的水量會因<b>季節的降雨量</b>而不同</li>
+      <li>例：中部的<b>濁水溪</b>夏季雨量多，河水量也多；冬季雨量少，部分<b>河床裸露</b></li>
+      <li>河水多<b>流入海洋</b>，或<b>滲入地下成為地下水</b></li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>濁水溪是<b>夏季</b>水多、<b>冬季</b>河床裸露，原因是降雨量不同，不是氣溫。</div>
+</section>
+
+<section>
+  <h2>水資源與居民的生活 <span class="pg">p.28–29</span></h2>
+  <div class="box">
+    <p>水資源與家鄉居民的生活<mark>息息相關</mark>，提供居民日常所需。</p>
+    <ul>
+      <li>政府在部分河川的<b>中、上游</b>建有<b>水庫</b>，功能：供給<mark>民生與工業用水、灌溉、水力發電</mark></li>
+      <li>休閒活動：在河川、湖泊、海洋<b>划船、騎自行車環湖、浮潛</b></li>
+      <li>課本圖中的水資源：水庫、湖泊、水圳、埤塘、河川、海洋（還有養魚的魚塭）</li>
+      <li>不當使用可能造成<b>汙染</b>（例：河川變紅色、味道難聞）。<mark>保護水資源是大家的責任</mark>，要避免汙染、珍惜並愛護水資源</li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>水庫建在河川的<b>中、上游</b>，不是下游出海口。保護水資源是「大家」的責任，不是只有政府。</div>
+</section>
+
+<section>
+  <h2>小小探究家：何時旅遊比較好？ <span class="pg">p.30–31</span></h2>
+  <div class="box">
+    <p>四個步驟：<b>1 發現問題</b> → <b>2 蒐集資料</b> → <b>3 整理分析</b> → <b>4 行動省思</b></p>
+    <ul>
+      <li>氣溫和降雨量資料可以查<mark>中央氣象署</mark>的網站；陽明山要查<b>竹子湖</b>觀測站</li>
+      <li>整理分析：圈出氣溫舒適的月分、降雨量最少的三個月分，再找出兩者都符合的月分</li>
+      <li>行動省思：大家發表看法，<b>共同投票</b>決定時間。出發前要<mark>事先查詢當地的氣候</mark>、穿適合的衣服、帶遮陽避雨的用具；參與時要愛惜當地環境</li>
+    </ul>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>竹子湖</th><th>重點數字</th></tr>
+    <tr><td>最冷</td><td class="num">1月 12.0°C</td></tr>
+    <tr><td>最熱</td><td class="num">7月 25.0°C</td></tr>
+    <tr><td>20–25°C 的月分</td><td class="num">5、6、7、8、9 月</td></tr>
+    <tr><td>降雨最少三個月</td><td class="num">4月 176.5、3月 193.1、7月 215.7 毫米</td></tr>
+    <tr><td>降雨最多</td><td class="num">9月 662.8 毫米</td></tr>
+    <tr><td>海芋花季</td><td>三、四月</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>降雨量最少是 <b>4 月</b>，不是 3 月。看表格時要一格一格比，別只看「看起來比較小」的。</div>
+</section>
+
+<div class="unit">第二單元　家鄉的傳統住屋與器物</div>
+
+<section>
+  <h2>單元階層圖 <span class="pg">p.32–33</span></h2>
+  <p class="lede">傳統住屋與器物，展現出家鄉居民<b>適應自然環境的智慧</b>，以及<b>多元的生活樣貌</b>。</p>
+  <div class="tree box" style="padding:10px">
+  <svg viewBox="0 0 680 290" role="img" aria-label="家鄉的傳統住屋與器物階層圖">
+    <g stroke="var(--muted)" stroke-width="1.5" fill="none">
+      <path d="M340 52 V72 M170 72 H510 M170 72 V92 M510 72 V92"/>
+      <path d="M170 128 V142 M90 142 H250 M90 142 V156 M170 142 V156 M250 142 V156"/>
+      <path d="M510 128 V142 M430 142 H590 M430 142 V156 M510 142 V156 M590 142 V156"/>
+    </g>
+    <rect x="200" y="14" width="280" height="38" rx="8" fill="var(--plain)"/>
+    <text x="340" y="39" text-anchor="middle" font-size="17" font-weight="700" style="fill:#fff">家鄉的傳統住屋與器物</text>
+    <rect x="90" y="92" width="160" height="36" rx="8" fill="var(--card)" stroke="var(--mount)" stroke-width="2"/>
+    <text x="170" y="116" text-anchor="middle" font-size="15" font-weight="700">傳統住屋與生活</text>
+    <rect x="430" y="92" width="160" height="36" rx="8" fill="var(--card)" stroke="var(--water)" stroke-width="2"/>
+    <text x="510" y="116" text-anchor="middle" font-size="15" font-weight="700">器物與生活</text>
+    <g font-size="13.5" text-anchor="middle">
+      <text writing-mode="tb" x="90" y="162">原住民族的傳統住屋</text>
+      <text writing-mode="tb" x="170" y="162">漢人的傳統住屋</text>
+      <text writing-mode="tb" x="250" y="162">傳統住屋的改變</text>
+      <text writing-mode="tb" x="430" y="162">原住民族的生活器物</text>
+      <text writing-mode="tb" x="510" y="162">漢人的生活器物</text>
+      <text writing-mode="tb" x="590" y="162">器物的現代風貌</text>
+    </g>
+  </svg>
+  </div>
+</section>
+
+<section>
+  <h2>原住民族的傳統住屋 <span class="pg">p.34–35</span></h2>
+  <p>原住民族以<mark>就地取材</mark>的方式，使用<b>石板、木頭、竹子、茅草</b>等材料搭建傳統住屋，為了<mark>適應自然環境</mark>，發展出獨具特色的建築形式。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>住屋</th><th>族群・地點</th><th>材料</th><th>特色</th></tr>
+    <tr><td><b>石板屋</b></td><td>排灣族（屏東縣瑪家鄉 舊排灣部落）</td><td>石板</td><td>冬暖夏涼</td></tr>
+    <tr><td><b>地下屋</b></td><td>雅美族（達悟族）（臺東縣蘭嶼鄉 野銀部落）</td><td>木頭、石頭</td><td>比較低矮的<b>半地下式</b>住屋，可以<mark>躲避強風</mark></td></tr>
+    <tr><td><b>傳統住屋</b></td><td>泰雅族（宜蘭縣蘇澳鎮 武荖坑風景區）</td><td>木頭、竹子</td><td>供遊客認識傳統建築技術及工藝之美</td></tr>
+  </table></div>
+  <div class="box">
+    <h3>會呼吸的房子：石板屋</h3>
+    <ul>
+      <li>大大小小的石板<b>交錯堆疊</b>，構築成堅固的石板屋</li>
+      <li>石板厚，<b>夏天隔熱、冬天保暖</b> →「冬暖夏涼」</li>
+      <li>在屋裡升火煮食、取暖，<b>煙可讓木頭防腐、防蟲</b>，並順著<b>石板之間的縫隙</b>往外飄 →「<mark>會呼吸的房子</mark>」</li>
+      <li>例：<b>排灣族與魯凱族</b>的石板屋</li>
+      <li>世界建築文物保護基金會（WMF）把<b>屏東縣霧臺鄉魯凱族</b>石板屋聚落（舊好茶部落）列入文物守護計畫名單</li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>「會呼吸」是因為煙從<b>石板縫隙</b>飄出去，不是因為有窗戶。地下屋是<b>蘭嶼雅美族（達悟族）</b>，為了躲<b>強風</b>，不是為了躲雨或保暖。</div>
+</section>
+
+<section>
+  <h2>漢人的傳統住屋 <span class="pg">p.36–39</span></h2>
+  <p>漢人的傳統住屋也受到自然環境影響，大多就地取材，用<b>竹子、木頭或土石</b>建造；有些用<mark>人工燒製的磚瓦</mark>建造。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>住屋</th><th>怎麼蓋</th><th>課本例子</th></tr>
+    <tr><td><b>竹管仔厝</b></td><td>用<b>竹子當骨架</b>，再敷上泥土</td><td>雲林縣麥寮鄉</td></tr>
+    <tr><td><b>土埆厝</b></td><td>用<b>石塊作基礎</b>，再用<b>稻稈、泥土和水做成土磚</b></td><td>新北市深坑區</td></tr>
+    <tr><td><b>磚瓦住屋</b></td><td>人工燒製的磚瓦</td><td>桃園市楊梅區 黃家古厝</td></tr>
+  </table></div>
+  <div class="box">
+    <h3>住屋形式的變化</h3>
+    <p>人們會因<mark>家中成員改變或經濟條件改善</mark>，建造不同形式的住屋：</p>
+    <p><b>一條龍</b>（只有<b>正身</b>，早期人口少）→ <b>單伸手</b>（正身＋<b>單邊</b>護龍）→ <b>三合院</b>（正身＋<b>兩邊</b>護龍）</p>
+    <p>有些家族人口眾多或家境較富裕，會<b>直接</b>興建三合院。</p>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>三合院空間</th><th>用途</th></tr>
+    <tr><td><b>正廳</b></td><td>正身中間，供奉神明和祖先牌位；祭拜神明、祖先和接待客人</td></tr>
+    <tr><td><b>稻埕</b></td><td>曬穀；孩童遊戲、乘涼聊天、彈唱戲曲；祭拜、請客。<mark>多用途</mark>的場所</td></tr>
+    <tr><td><b>果樹、竹林</b></td><td>採水果、撿柴火；編織器物、修理房屋的材料來源。竹林還能<b>防風、防盜</b></td></tr>
+    <tr><td><b>水池</b></td><td>洗東西、養魚；發生火災時可以<b>滅火</b></td></tr>
+    <tr><td><b>堆肥場</b></td><td>枯枝落葉＋人和禽畜糞尿做成堆肥，讓土地肥沃</td></tr>
+  </table></div>
+  <div class="box">
+    <h3>三合院的左右</h3>
+    <p>人站在<b>正廳前，面朝外</b>時，<b>左手邊</b>的房子是三合院的左邊。傳統觀念<mark>以左為尊</mark>，房間以「<b>左大右小</b>」的原則分配。</p>
+  </div>
+  <div class="trap"><b>易錯：</b>單伸手是<b>一邊</b>護龍，三合院是<b>兩邊</b>護龍。三合院的左右要「面朝外」看，和你從大門走進去看到的左右<b>相反</b>。</div>
+</section>
+
+<section>
+  <h2>傳統住屋的改變 <span class="pg">p.40–41</span></h2>
+  <div class="box">
+    <p>原因：<mark>工商業的發展、生活方式的轉變、建築材料的革新</mark> → 許多傳統住屋拆除後，改為<b>鋼筋混凝土</b>的樓房。</p>
+    <p>少數留存的傳統住屋：部分仍有居民居住；有些改建為<b>特色餐廳</b>（例：臺中市烏日區三合院改成咖啡廳）。</p>
+    <p>為了保存先民的智慧結晶，政府和民間積極推動維護與保存：</p>
+    <ul>
+      <li>列為<b>古蹟</b></li>
+      <li>規畫為<b>聚落保存區</b>（例：澎湖縣西嶼鄉<b>二崁村</b>，被選定為文化聚落保存區）</li>
+      <li>結合當地特色成為<b>觀光景點</b></li>
+    </ul>
+    <p>其他例子：屏東縣春日鄉排灣族<b>七佳部落</b>（保存完整的石板屋聚落）、苗栗縣頭份市<b>蘆竹湳聚落</b>。</p>
+  </div>
+</section>
+
+<section>
+  <h2>器物與生活 <span class="pg">p.42–45</span></h2>
+  <p>早期居民從自然環境中<mark>就地取材</mark>，製作各種日常生活器物，讓生活更便利。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th></th><th>器物</th><th>材料</th><th>用途</th></tr>
+    <tr><td rowspan="3"><b>原住民族</b></td><td>魚筌</td><td>竹子、藤</td><td>捕捉魚蝦</td></tr>
+    <tr><td>木杵</td><td>木頭</td><td>搗製食物</td></tr>
+    <tr><td>月桃葉等</td><td>植物葉子</td><td>包裹食物</td></tr>
+    <tr><td rowspan="3"><b>漢人</b></td><td>土灶</td><td>泥土</td><td>煮菜、蒸粿</td></tr>
+    <tr><td>粽葉等</td><td>植物葉子</td><td>包裝粿、粽子</td></tr>
+    <tr><td>菜櫥、水桶、砧板</td><td>木材</td><td>日常使用</td></tr>
+  </table></div>
+  <div class="box">
+    <h3>魚筌的智慧（阿美族）</h3>
+    <ul>
+      <li>形狀像<b>漏斗</b>，魚游進去後不容易再游出來</li>
+      <li>放在溪裡時，旁邊要找石頭固定好</li>
+      <li>旁邊有空隙，<b>小魚可以從縫隙游出去繼續長大</b> → 不讓魚被捕光，魚群<mark>生生不息</mark></li>
+    </ul>
+  </div>
+  <div class="box">
+    <h3>灶的物盡其用</h3>
+    <ul>
+      <li>用<b>木柴</b>燒火，增加或減少木柴來控制火力大小</li>
+      <li>灰燼的<b>餘溫</b>可以把地瓜悶熟；冷卻後的灰燼可以當<b>菜園的肥料</b></li>
+      <li>傳統器物的原料<mark>多來自大自然</mark>，用過的廢棄物最後也<mark>回歸大自然</mark></li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>魚筌留縫隙不是做壞了，是為了讓<b>小魚</b>逃走、長大，魚才不會被捕光。灶的灰燼是拿來當<b>肥料</b>，不是丟掉。</div>
+</section>
+
+<section>
+  <h2>生活器物的現代風貌 <span class="pg">p.46–47</span></h2>
+  <div class="box">
+    <ul>
+      <li>科技進步，<b>玻璃、金屬、塑膠</b>的器物更普遍</li>
+      <li>塑膠器物<mark>輕便又便宜</mark>，取代了傳統竹、木製造的器物</li>
+      <li>但塑膠<mark>不易在自然環境中分解</mark>，丟棄後變成難以處理的垃圾</li>
+      <li>響應<b>減塑運動</b>：選擇對環境友善、<b>能重複使用</b>的器物（例：用不鏽鋼吸管，或直接喝）</li>
+      <li>淨灘撿到的海洋廢棄物以<b>塑膠器物為多數</b>，第一名是<b>寶特瓶</b>，第二名是塑膠瓶蓋（民國 112 年）</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>小小探究家：器物大不同 <span class="pg">p.48–51</span></h2>
+  <div class="box">
+    <p>步驟一樣：<b>發現問題 → 蒐集資料 → 整理分析 → 行動省思</b></p>
+    <ul>
+      <li>早期器物例子：<b>斗笠、桌罩、背簍</b></li>
+      <li>蒐集資料的方法：<b>上網搜尋、去圖書館查書、請教家人</b></li>
+      <li>布農族用<b>藤</b>編織背簍：框架用<b>藤條</b>，簍身用<b>藤皮</b>；可背農作物、獵物、工具，也可以背小孩</li>
+      <li>用<mark>階層圖</mark>依「材質」「用途」整理，讓別人更容易掌握重點</li>
+    </ul>
+  </div>
+  <div class="tree box" style="padding:10px">
+  <svg viewBox="0 0 520 210" role="img" aria-label="背簍階層圖" style="min-width:480px">
+    <g stroke="var(--muted)" stroke-width="1.5" fill="none">
+      <path d="M260 44 V60 M130 60 H390 M130 60 V74 M390 60 V74"/>
+      <path d="M130 104 V118 M130 148 V160 M80 160 H180 M80 160 V170 M180 160 V170"/>
+      <path d="M390 104 V118 M315 118 H465 M315 118 V128 M365 118 V128 M415 118 V128 M465 118 V128"/>
+    </g>
+    <rect x="210" y="10" width="100" height="34" rx="8" fill="var(--mount)"/>
+    <text x="260" y="33" text-anchor="middle" font-size="16" font-weight="700" style="fill:#fff">背簍</text>
+    <rect x="90" y="74" width="80" height="30" rx="7" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/><text x="130" y="95" text-anchor="middle" font-size="14" font-weight="700">材質</text>
+    <rect x="350" y="74" width="80" height="30" rx="7" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/><text x="390" y="95" text-anchor="middle" font-size="14" font-weight="700">用途</text>
+    <rect x="100" y="118" width="60" height="30" rx="7" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/><text x="130" y="139" text-anchor="middle" font-size="14">藤</text>
+    <g font-size="13" text-anchor="middle">
+      <text x="80" y="188">藤條</text><text x="80" y="204" style="fill:var(--muted)">框架</text>
+      <text x="180" y="188">藤皮</text><text x="180" y="204" style="fill:var(--muted)">簍身</text>
+      <text writing-mode="tb" x="315" y="134">背農作物</text><text writing-mode="tb" x="365" y="134">背獵物</text><text writing-mode="tb" x="415" y="134">背工具</text><text writing-mode="tb" x="465" y="134">背小孩</text>
+    </g>
+  </svg>
+  </div>
+</section>
+
+<div class="unit">第三單元　家鄉的傳統信仰與老街</div>
+
+<section>
+  <h2>單元開頭：臺中市大甲區 <span class="pg">p.52–53</span></h2>
+  <div class="box">
+    <ul>
+      <li>圖畫裡有舊式火車站（日南車站）、鐵路公路共構的橋梁、鐵砧山（像鐵匠打鐵用的鐵砧）</li>
+      <li>和<mark>傳統信仰</mark>有關的是：每年舉辦的<b>媽祖繞境</b>，相傳可以<b>保佑地方一切平安</b></li>
+      <li>大甲的三項特產：<b>芋頭、酥餅、草帽</b></li>
+    </ul>
+    <p>家鄉的原住民族與漢人擁有不同的傳統信仰，我們應該<mark>尊重與包容</mark>。家鄉的老街保留了先民的生活樣貌，值得努力保存。</p>
+  </div>
+  <div class="tree box" style="padding:10px">
+  <svg viewBox="0 0 680 250" role="img" aria-label="家鄉的傳統信仰與老街階層圖">
+    <g stroke="var(--muted)" stroke-width="1.5" fill="none">
+      <path d="M340 52 V72 M170 72 H510 M170 72 V92 M510 72 V92"/>
+      <path d="M170 128 V142 M90 142 H250 M90 142 V156 M170 142 V156 M250 142 V156"/>
+      <path d="M510 128 V142 M430 142 H590 M430 142 V156 M510 142 V156 M590 142 V156"/>
+    </g>
+    <rect x="200" y="14" width="280" height="38" rx="8" fill="var(--accent)"/>
+    <text x="340" y="39" text-anchor="middle" font-size="17" font-weight="700" style="fill:#fff">家鄉的傳統信仰與老街</text>
+    <rect x="90" y="92" width="160" height="36" rx="8" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="170" y="116" text-anchor="middle" font-size="15" font-weight="700">信仰與生活</text>
+    <rect x="430" y="92" width="160" height="36" rx="8" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="510" y="116" text-anchor="middle" font-size="15" font-weight="700">老街與生活</text>
+    <g font-size="13.5" text-anchor="middle">
+      <text writing-mode="tb" x="90" y="162">原住民族的信仰與生活</text>
+      <text writing-mode="tb" x="170" y="162">漢人的信仰與生活</text>
+      <text writing-mode="tb" x="250" y="162">信仰與現代生活</text>
+      <text writing-mode="tb" x="430" y="162">老街的發展</text>
+      <g>
+      <text writing-mode="tb" x="510" y="162">老街的轉變</text>
+      <text writing-mode="tb" x="590" y="162">街道的多元風貌</text></g>
+    </g>
+  </svg>
+  </div>
+  
+</section>
+
+<section>
+  <h2>原住民族的傳統信仰與生活 <span class="pg">p.54–55</span></h2>
+  <div class="box">
+    <p>原住民族的傳統信仰有<mark>祖靈</mark>和<mark>自然界的神靈</mark>。在<b>播種、收割、狩獵、征戰、出生或死亡</b>時，會用不同的祭典或儀式，表達對祖靈或神靈的<b>敬畏</b>，並<b>祈求保佑</b>。</p>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>族群</th><th>祭典・傳說</th><th>重點</th></tr>
+    <tr><td><b>排灣族</b><br>臺東縣達仁鄉</td><td><b>五年祭</b></td><td>相信祖靈<b>每五年</b>會回部落探訪子孫，以<mark>感謝與追念祖先</mark></td></tr>
+    <tr><td><b>鄒族</b><br>嘉義縣阿里山鄉</td><td><b>戰祭</b></td><td>祈求<b>天神</b>的保佑與祝福，並有<mark>團結族人</mark>的意義；過去也祈求征戰勝利</td></tr>
+    <tr><td><b>泰雅族</b></td><td><b>彩虹橋傳說</b></td><td>學會技巧才能通過彩虹橋和祖靈相聚。<b>男生學打獵、女生學織布</b>，努力成為正當、有用的人，不讓族人挨餓受凍</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>五年祭是<b>排灣族</b>，戰祭是<b>鄒族</b>，彩虹橋是<b>泰雅族</b>，三個不要配錯。彩虹橋傳說裡，男生是<b>打獵</b>、女生是<b>織布</b>。</div>
+</section>
+
+<section>
+  <h2>漢人的傳統信仰與生活 <span class="pg">p.56–57</span></h2>
+  <div class="box">
+    <p>漢人常常興建<b>廟宇</b>祭拜神明，以祈求<mark>平安與豐收</mark>。</p>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>神明</th><th>別稱</th><th>保佑什麼</th></tr>
+    <tr><td><b>土地公</b></td><td>福德正神</td><td>守護農田、村莊，保佑<b>作物豐收</b>。土地公廟是<mark>臺灣最常見的廟宇</mark></td></tr>
+    <tr><td><b>媽祖</b></td><td>天上聖母</td><td>保佑<b>航海平安</b>。每年的媽祖繞境吸引各地信徒參加</td></tr>
+  </table></div>
+  <div class="box">
+    <p>家鄉的廟宇是當地的<mark>信仰中心</mark>；廟前廣場是大家<b>休閒聚會</b>的地方。廟宇會舉辦儀式、祭典和慶祝活動，也能藉此<b>聯絡家鄉居民的感情</b>。</p>
+  </div>
+  <div class="trap"><b>易錯：</b>「福德正神」是<b>土地公</b>，「天上聖母」是<b>媽祖</b>。土地公管<b>農田豐收</b>，媽祖管<b>航海平安</b>。</div>
+</section>
+
+<section>
+  <h2>信仰與現代生活 <span class="pg">p.58–59</span></h2>
+  <div class="box">
+    <ul>
+      <li>居民有不同的信仰活動：<b>燒香拜拜、參加廟會慶典、到教會做禮拜</b>等</li>
+      <li>現代生活觀念轉變，信仰活動也會改變：為了<mark>響應環保</mark>，有些廟宇<b>減少燒香</b>，改用<b>雙手合掌</b>代替</li>
+      <li>大多數的信仰都在鼓勵人們<b>修身養性、行善助人、勇敢克服困難</b>，具有<mark>安定人心、促進社會祥和</mark>的功能</li>
+      <li>有些居民受信仰影響，成為宗教團體的<b>志工</b>，服務眾人</li>
+      <li>面對不同的信仰，我們都應該<mark>尊重與包容</mark>（例：同學星期天要做禮拜，就改約星期六打球）</li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>廟宇減少燒香的原因是<b>環保</b>，不是不虔誠。面對別人的信仰要尊重，不能要求對方放棄自己的信仰活動。</div>
+</section>
+
+<section>
+  <h2>社會充電站：高遶教堂 <span class="pg">p.60–61</span></h2>
+  <div class="box">
+    <p>原住民族傳統普遍信仰祖靈或神靈。因為<mark>外來文化的傳入</mark>，有些原住民族也信仰<b>基督教</b>或<b>天主教</b>，尋求心靈的慰藉。</p>
+    <p>地點：<b>桃園市復興區 高遶部落</b>（在羅馬公路上）。「高遶」（Qoyaw）在泰雅族語中指<b>長枝竹</b>，穩固不易斷，是很好的材料。</p>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>時間</th><th>教堂的材料</th><th>為什麼改</th></tr>
+    <tr><td class="num">民國 37 年</td><td>在民宅內聚會 → 就地取材，用<b>竹子</b>建教堂</td><td>信徒增多，需要較寬敞的場地</td></tr>
+    <tr><td></td><td><b>土磚</b>（土埆教堂）</td><td>竹子風吹日曬容易毀損</td></tr>
+    <tr><td></td><td>從大漢溪、高遶溪搬石頭，切成<b>方石</b></td><td>土埆教堂也一樣毀損</td></tr>
+    <tr><td class="num">民國 62 年</td><td><b>鋼筋水泥</b>（靠捐助的資金）</td><td>開闢羅馬公路，地基下陷、建築產生縫隙</td></tr>
+  </table></div>
+  <div class="box">
+    <p>居民因為有<mark>虔誠的信仰</mark>支持，堅持又無私的付出，遇到困難也不放棄，教堂終於重現，成為信徒聚會、禱告的場所。</p>
+  </div>
+  <div class="trap"><b>易錯：</b>材料順序是 <b>竹子 → 土磚 → 方石 → 鋼筋水泥</b>。最後一次改建的原因是<b>開闢羅馬公路</b>造成地基下陷，不是颱風。</div>
+</section>
+
+<section>
+  <h2>老街與生活：三峽老街 <span class="pg">p.62–63</span></h2>
+  <div class="box">
+    <p>從老街的<b>建築外觀、廟宇、販賣的商品</b>，可以發現老街的特色。</p>
+    <ul>
+      <li><b>建築外觀</b>：許多看起來很像的紅磚房子，有拱形的騎樓和華麗的立面</li>
+      <li><b>廟宇</b>：<b>三峽祖師廟</b>，已有<mark>兩百多年</mark>的歷史</li>
+      <li><b>特色產品</b>：<b>金牛角麵包</b>、<b>藍染</b>（可以參加染布體驗）</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>老街的發展 <span class="pg">p.64–65</span></h2>
+  <div class="box">
+    <p><b>廟宇</b>是人們經常聚集的地方 → 吸引商人、小販到廟宇附近買賣 → 形成<b>市集</b>或<b>商店街</b> → 部分演變成現在的<mark>老街</mark>。</p>
+    <p><b>市集</b>：在<mark>固定時間、地點</mark>，進行貨物買賣的場所。</p>
+  </div>
+  <div class="box">
+    <h3>老街的街屋</h3>
+    <ul>
+      <li>店鋪在<b>道路兩旁</b>，店面<b>朝向街道</b></li>
+      <li>設有<mark>騎樓</mark>，供顧客、行人<b>遮陽避雨</b>（例：金門縣金城鎮 金城老街，至今仍保有完整的騎樓）</li>
+      <li>店鋪的<b>後方或樓上</b>是商家<b>起居作息</b>的場所 → 店家<mark>兼顧工作與生活</mark></li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>老街是從<b>廟宇附近</b>的市集發展來的，不是從火車站。騎樓的功能是<b>遮陽避雨</b>；商家住在店鋪的<b>後方或樓上</b>。</div>
+</section>
+
+<section>
+  <h2>老街的轉變 <span class="pg">p.66</span></h2>
+  <p>到了現代，老街也有了轉變。老街保留了過去先民生活的記憶，是家鄉<mark>重要的文化特色</mark>。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>轉變</th><th>例子</th><th>說明</th></tr>
+    <tr><td><b>沒落</b>、人潮減少</td><td>臺南市 <b>橋南老街</b></td><td>早期是鹽水區最熱鬧的街道之一，後來<b>港口淤積</b>而沒落，轉為寧靜的住宅區</td></tr>
+    <tr><td>傳統及新興商店<b>並存</b></td><td>臺中市 <b>南屯老街</b></td><td>早期有許多製造、買賣<b>農具</b>的店鋪；現在老店和新興商店都有，是居民平日購物的商店街</td></tr>
+    <tr><td>經過<b>規畫與維護</b>，保留原始風貌</td><td>彰化縣 <b>鹿港老街</b></td><td>保留許多早期<b>閩南式建築</b>，吸引國內外遊客觀光</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>三條老街配三種轉變：<b>橋南＝沒落</b>（港口淤積）、<b>南屯＝新舊並存</b>（農具店）、<b>鹿港＝保留原貌</b>（閩南式建築）。</div>
+</section>
+
+<section>
+  <h2>家鄉街道的多元風貌 <span class="pg">p.67</span></h2>
+  <div class="box">
+    <ul>
+      <li>現代<b>工商業發達、人口增加</b> → 出現販賣飲食、服飾、雜貨等的街道</li>
+      <li><b>新住民的移入、國際移工的增加</b> → 出現不同文化的商店 → 街道呈現<mark>多元的風貌</mark></li>
+    </ul>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>街道</th><th>特色</th></tr>
+    <tr><td>花蓮縣 <b>火車站附近</b>的街道</td><td>為了因應<b>觀光人潮</b>，有不少販賣特色食品的商店。花蓮特色美食：<b>麻糬</b></td></tr>
+    <tr><td>臺北市 <b>北平西路</b>（印尼街）</td><td>許多販賣<b>印尼</b>飲食、服飾、雜貨的商店。印尼特色美食：<b>薑黃飯</b></td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>小小探究家：家鄉的老街有哪些特色？ <span class="pg">p.68–69</span></h2>
+  <div class="box">
+    <ul>
+      <li>課本介紹過的老街：<b>金城、南屯、鹿港、橋南、三峽</b></li>
+      <li>蒐集資料：利用網路，在搜尋欄位<b>輸入關鍵字</b></li>
+      <li>整理分析：把資料填入<mark>T 表／T 圖</mark>（老街地址、特色商品食物、特色建築）</li>
+      <li>行動省思：用 T 表向同學介紹老街特色，分享心得</li>
+    </ul>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th colspan="2">示例：雲林縣 西螺老街</th></tr>
+    <tr><td>老街地址</td><td>雲林縣西螺鎮延平路</td></tr>
+    <tr><td>特色商品、食物</td><td>米糕、日本天皇御用米、麥芽酥、醬油、九層粿</td></tr>
+    <tr><td>特色建築</td><td>西式風格的洋樓街屋（百年前的時尚建築）</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>第二單元整理背簍用的是<b>階層圖</b>，這裡整理老街用的是 <b>T 表／T 圖</b>，兩種不要搞混。</div>
+</section>
+
+<div class="unit">第四單元　家鄉的作息、節慶與節日</div>
+
+<section>
+  <h2>單元開頭與階層圖 <span class="pg">p.70–71</span></h2>
+  <div class="box">
+    <p>過新年的不同方式：除夕夜<b>圍爐吃年夜飯</b>；12 月 31 日<b>跨年演唱會、煙火</b>；族人在 7–9 月舉辦<b>豐年祭</b>感謝上天恩賜；4 月<b>相互潑水</b>給予祝福（潑水節）。</p>
+    <p>家鄉居民的生活作息已和過去不同，現代更有許多節日，形成<mark>豐富、多樣化</mark>的家鄉生活。</p>
+  </div>
+  <div class="tree box" style="padding:10px">
+  <svg viewBox="0 0 680 290" role="img" aria-label="家鄉的作息、節慶與節日階層圖">
+    <g stroke="var(--muted)" stroke-width="1.5" fill="none">
+      <path d="M340 52 V72 M110 72 H570 M110 72 V92 M340 72 V92 M570 72 V92"/>
+      <path d="M110 128 V142 M50 142 H170 M50 142 V156 M110 142 V156 M170 142 V156"/>
+      <path d="M340 128 V142 M280 142 H400 M280 142 V156 M340 142 V156 M400 142 V156"/>
+      <path d="M570 128 V142 M490 142 H650 M490 142 V156 M530 142 V156 M570 142 V156 M610 142 V156 M650 142 V156"/>
+    </g>
+    <rect x="200" y="14" width="280" height="38" rx="8" fill="var(--water)"/>
+    <text x="340" y="39" text-anchor="middle" font-size="16" font-weight="700" style="fill:#fff">家鄉的作息、節慶與節日</text>
+    <rect x="45" y="92" width="130" height="36" rx="8" fill="var(--card)" stroke="var(--water)" stroke-width="2"/><text x="110" y="116" text-anchor="middle" font-size="15" font-weight="700">生活的作息</text>
+    <rect x="275" y="92" width="130" height="36" rx="8" fill="var(--card)" stroke="var(--water)" stroke-width="2"/><text x="340" y="116" text-anchor="middle" font-size="15" font-weight="700">傳統的節慶</text>
+    <rect x="505" y="92" width="130" height="36" rx="8" fill="var(--card)" stroke="var(--water)" stroke-width="2"/><text x="570" y="116" text-anchor="middle" font-size="15" font-weight="700">現代的節日</text>
+    <g font-size="12.5" text-anchor="middle">
+      <text writing-mode="tb" x="50" y="162">傳統的生活作息</text><text writing-mode="tb" x="110" y="162">作息的依據</text><text writing-mode="tb" x="170" y="162">現代的生活作息</text>
+      <text writing-mode="tb" x="280" y="162">原住民族的祭典</text><text writing-mode="tb" x="340" y="162">漢人的節慶</text><text writing-mode="tb" x="400" y="162">尊重不同祭典節慶</text>
+      <text writing-mode="tb" x="490" y="162">人生不同階段</text><text writing-mode="tb" x="530" y="162">各行各業</text><text writing-mode="tb" x="570" y="162">國家重要</text><text writing-mode="tb" x="610" y="162">外來文化</text><text writing-mode="tb" x="650" y="162">與議題相關</text>
+    </g>
+  </svg>
+  </div>
+</section>
+
+<section>
+  <h2>傳統的生活作息 <span class="pg">p.72–73</span></h2>
+  <div class="box">
+    <ul>
+      <li>白天是主要的工作時間，夜晚是休息時間：「<mark>日出而作，日入而息</mark>」是當時一天生活樣貌的寫照</li>
+      <li>一年的作息會<b>配合季節變化</b>，進行農耕、捕撈、狩獵、祭典及節慶等活動</li>
+    </ul>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th colspan="2">雅美族（達悟族）捕撈飛魚</th></tr>
+    <tr><td><b>飛魚招魚祭</b>（約 2 月）</td><td>開始捕撈，祈求未來漁獲豐碩</td></tr>
+    <tr><td><b>飛魚收藏祭</b>（約 6 月）</td><td>結束捕撈，把飛魚曬乾儲存</td></tr>
+    <tr><td><b>飛魚終食祭</b>（約 9 月）</td><td>停止食用，一年中最後一次吃飛魚乾；剩下的送人或餵動物，<b>不浪費食物</b></td></tr>
+    <tr><td colspan="2">規範捕撈、食用的時間：表達對飛魚的<b>尊敬</b>，也有<mark>與自然共處、避免過度捕撈</mark>的意義</td></tr>
+  </table></div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th colspan="2">漢人種稻</th></tr>
+    <tr><td><b>插秧</b></td><td>把培育好的秧苗插入田中</td></tr>
+    <tr><td><b>除草施肥</b></td><td>依水稻生長狀況施肥、拔除雜草</td></tr>
+    <tr><td><b>收割</b></td><td>收割稻穗並打穀、曬穀</td></tr>
+    <tr><td colspan="2">臺灣的稻米通常一年可以種植並收穫<mark>兩次</mark>（第一期、第二期）。目前插秧、收割多已<b>機械化</b></td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>飛魚三個祭典的順序：<b>招魚祭（開始）→ 收藏祭（結束捕撈）→ 終食祭（停止食用）</b>。臺灣稻米一年收<b>兩次</b>。</div>
+</section>
+
+<section>
+  <h2>傳統生活作息的依據 <span class="pg">p.74–77</span></h2>
+  <div class="box">
+    <p>原住民族配合季節與氣候變化安排農耕、狩獵、祭祀，並用<mark>口耳相傳</mark>或<mark>畫圖</mark>把活動的時間和內容流傳下來。</p>
+    <ul>
+      <li><b>口耳相傳</b>：魯凱族打獵的季節是<b>冬天</b>，因為天氣冷，獵物比較容易保存</li>
+      <li><b>畫圖</b>：<b>布農族</b>的<b>木刻畫曆</b>，用刀子在木板上刻圖形符號，記載全年要做的事（農耕、狩獵、祭典）。除了提醒族人生活要規律，也能<b>傳承知識與文化</b></li>
+    </ul>
+  </div>
+  <div class="box">
+    <h3>漢人的農民曆</h3>
+    <p>漢人的祖先<b>觀察自然的變化</b>發明農曆，用來安排生活作息、工作及節慶，形成<mark>農民曆</mark>。</p>
+    <p>農民曆上有：國曆的月分、日期星期、農曆的月日、適合<b>栽種</b>的作物、可以<b>捕撈</b>的魚類、適宜或不適宜（<b>宜／忌</b>）從事的活動。</p>
+    <p>農民曆上的種植和捕撈時期來自<b>傳統經驗</b>，隨著科技發展、技術提升，現在不一定相同。</p>
+    <p>現代有人仍參考農民曆挑日子<b>結婚、搬家（入宅）</b>；也有人挑<b>有意義的日子</b>（例：5 月 20 日「我愛你」），或利用<b>週末假日</b>。</p>
+  </div>
+  <div class="trap"><b>易錯：</b>木刻畫曆是<b>布農族</b>，冬天打獵的是<b>魯凱族</b>。農民曆是漢人<b>觀察自然變化</b>發明的。</div>
+</section>
+
+<section>
+  <h2>現代的生活作息 <span class="pg">p.78–79</span></h2>
+  <div class="box">
+    <ul>
+      <li>我們現在使用的<b>陽曆</b>也稱為<b>國曆</b></li>
+      <li>現代作息逐漸<b>脫離配合自然變化</b>的生活步調；生活和工作內容比過去複雜許多 → 改用<mark>陽曆與星期制</mark>，有了<b>工作日與休息日</b>的區別</li>
+      <li>科技進步，生活<b>較不受時間與地點的限制</b>，可依個人需求彈性安排學習、工作、消費及娛樂</li>
+      <li>政府實施<mark>週休二日</mark>後，人們有更多時間安排休閒活動</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>原住民族的祭典 <span class="pg">p.80–81</span></h2>
+  <p>為了祈求農事或漁獵順利 → <b>播種祭、招魚祭</b>；慶祝作物豐收 → <b>豐年祭、感恩祭</b>；傳承狩獵技巧 → <b>大獵祭</b>。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>族群</th><th>祭典</th><th>時間</th><th>重點</th></tr>
+    <tr><td><b>邵族</b></td><td>播種祭</td><td class="num">國曆 4 月</td><td>春季舉行，祈求作物順利成長、豐收。讓<b>小朋友第一個播種</b>，代表作物能健康成長</td></tr>
+    <tr><td><b>阿美族</b></td><td>豐年祭</td><td class="num">國曆 7–9 月</td><td>祭典禮俗與傳統歌舞，感謝上天的恩賜。外人<b>沒有受到邀請，不可隨意參與</b></td></tr>
+    <tr><td><b>太魯閣族</b></td><td>感恩祭</td><td class="num">國曆 10 月</td><td>感謝祖先庇佑五穀豐收，祈求明年豐收。用豬肉、小米、玉米、地瓜祭拜祖靈</td></tr>
+    <tr><td><b>卑南族</b></td><td>大獵祭</td><td class="num">國曆 12 月</td><td>族長老帶男子狩獵考驗，回來後婦女小孩為他們戴<b>花環</b>（尊敬、情誼；愈多層地位愈崇高）</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>四個祭典照月分排：<b>邵族播種（4月）→ 阿美族豐年（7–9月）→ 太魯閣族感恩（10月）→ 卑南族大獵（12月）</b>。</div>
+</section>
+
+<section>
+  <h2>漢人的節慶 <span class="pg">p.82–84</span></h2>
+  <p>漢人配合季節進行農事，並利用<mark>農閒時間</mark>舉辦節慶活動。<b>農閒時間</b>：農民完成每一階段農事後的閒暇時間。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>節慶</th><th>日期</th><th>習俗・意義</th></tr>
+    <tr><td><b>除夕</b></td><td class="num">農曆 12/30（或 29）</td><td>農曆最後一天，圍爐團圓、發壓歲錢</td></tr>
+    <tr><td><b>春節</b></td><td class="num">農曆 1/1</td><td>新年開始，到親友家拜年、到寺廟祈求平安順利</td></tr>
+    <tr><td><b>元宵節</b></td><td class="num">農曆 1/15</td><td>春節慶祝活動的<b>尾聲</b>；燈會、猜燈謎、吃元宵</td></tr>
+    <tr><td><b>清明節</b></td><td class="num"><mark>國曆</mark> 4/5（或 4、6）</td><td>祭祀祖先、追思親人；掃墓祭祖</td></tr>
+    <tr><td><b>端午節</b></td><td class="num">農曆 5/5</td><td>天氣炎熱易生蚊蟲疾病 → 配戴香包、門口插艾草，祈求健康平安；吃粽子、划龍舟</td></tr>
+    <tr><td><b>中元節</b></td><td class="num">農曆 7/15</td><td>祭拜孤魂、放水燈（基隆）等普渡亡靈的習俗，傳達<b>博愛</b>的精神</td></tr>
+    <tr><td><b>中秋節</b></td><td class="num">農曆 8/15</td><td>與家人團圓；賞月、吃月餅與柚子（保佑平安）</td></tr>
+  </table></div>
+  <div class="trap"><b>易錯：</b>清明節是唯一用<b>國曆</b>算的（4 月 5 日），其他都是<b>農曆</b>。元宵節是春節的<b>尾聲</b>。端午插艾草是為了防<b>蚊蟲疾病</b>。</div>
+</section>
+
+<section>
+  <h2>尊重族群的不同祭典與節慶 <span class="pg">p.85</span></h2>
+  <div class="box">
+    <p>傳統祭典或節慶多含有<mark>感謝天地、敬神祭祖、家人團圓</mark>等意義。參與不同活動可以：體會先民的智慧、凝聚家族的向心力、豐富居民生活、促進不同族群間的<b>互動與理解</b>。</p>
+    <p>例：<b>賽夏族祖靈祭</b>（竹籤串豬肉、裝酒的竹杯、糯米糕）與<b>漢人祭祖</b>，都在祭拜祖先，只是方式、場所和供品不同。敬畏祖先、感恩與祈福的心意是一樣的，都值得了解與<b>尊重</b>。</p>
+  </div>
+</section>
+
+<section>
+  <h2>現代的節日 <span class="pg">p.86–91</span></h2>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>類別</th><th>節日</th><th>日期（國曆）</th><th>意義</th></tr>
+    <tr><td rowspan="4"><b>人生不同階段</b></td><td>青年節</td><td class="num">3/29</td><td rowspan="4">提醒自己的重要性與責任；表達對兒童的<b>關懷</b>、對青年的<b>期許</b>、對父母的<b>敬愛</b></td></tr>
+    <tr><td>兒童節</td><td class="num">4/4</td></tr>
+    <tr><td>母親節</td><td class="num">5 月第二個星期日</td></tr>
+    <tr><td>父親節</td><td class="num">8/8</td></tr>
+    <tr><td rowspan="3"><b>各行各業</b></td><td>勞動節</td><td></td><td rowspan="3">讓生活更美好，要<b>珍惜、尊重並感謝</b>他們的付出</td></tr>
+    <tr><td>警察節</td><td class="num">6/15</td></tr>
+    <tr><td>教師節</td><td class="num">9/28</td></tr>
+    <tr><td rowspan="3"><b>國家重要</b></td><td>開國紀念日</td><td class="num">1/1</td><td rowspan="3">了解國家發展的歷史與重要事件，珍惜現在安定的生活</td></tr>
+    <tr><td>和平紀念日</td><td></td></tr>
+    <tr><td>國慶日</td><td class="num">10/10</td></tr>
+    <tr><td rowspan="2"><b>外來文化</b></td><td>潑水節</td><td class="num">4 月中旬</td><td>泰國新年習俗，互相潑水是給對方祝福，洗去過去一年的不順利</td></tr>
+    <tr><td>耶誕節</td><td class="num">12/25</td><td>基督教慶祝耶穌誕生；學校社區會布置耶誕樹、辦活動</td></tr>
+  </table></div>
+  <div class="box">
+    <p>外來文化節日出現的原因：<mark>國際交流與新住民加入</mark>，反映家鄉社會多元的風貌。參與這些活動可以認識節日意義、欣賞不同文化特色，進而<b>尊重多元文化</b>。</p>
+  </div>
+  <div class="trap"><b>易錯：</b>兒童節<b>不是</b>傳統節日，是現代節日。母親節沒有固定日期，是<b>5 月第二個星期日</b>。潑水節互相潑水是<b>祝福</b>，不是吵架。</div>
+</section>
+
+<section>
+  <h2>與議題相關的節日 <span class="pg">p.92–93</span></h2>
+  <div class="box">
+    <p>為了引起大家對<mark>重要議題的重視</mark>而訂定的節日。人們可以用實際行動響應議題理念，並落實在日常生活中。</p>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>節日</th><th>日期（國曆）</th><th>議題</th><th>各國活動</th></tr>
+    <tr><td><b>世界地球日</b></td><td class="num">4/22</td><td>環境保護</td><td>淨灘（臺灣）、遊行推廣自行車代步（匈牙利）、愛護地球的校園活動（印度）</td></tr>
+    <tr><td><b>世界閱讀日</b></td><td class="num">4/23</td><td>閱讀素養</td><td>繪本故事導讀、舊書交換、呼籲注重<b>書本版權</b>的遊行</td></tr>
+  </table></div>
+  <div class="box">
+    <p>現代節日愈來愈多元，共有五類：<b>人生不同階段、各行各業、國家重要事件、外來文化、議題相關</b>。透過這些節日，可以表達我們對各種事物的重視，也豐富家鄉的生活。</p>
+  </div>
+  <div class="trap"><b>易錯：</b>地球日 <b>4/22</b>、閱讀日 <b>4/23</b>，只差一天，別對調。</div>
+</section>
+
+<section>
+  <h2>小小探究家：兒童節大不同？ <span class="pg">p.94–97</span></h2>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>國家</th><th>兒童節日期</th><th>活動・目的</th></tr>
+    <tr><td><b>臺灣</b></td><td class="num">4 月 4 日</td><td>學校舉辦各式各樣的慶祝活動</td></tr>
+    <tr><td><b>捷克</b></td><td class="num">6 月 1 日</td><td>舉辦盛大活動，喚醒眾人對<b>兒童權益</b>的重視</td></tr>
+    <tr><td><b>新加坡</b></td><td class="num">10 月第一個星期五</td><td>為促進家庭和諧，<b>兒童和家長都放假</b>，增進親子關係</td></tr>
+  </table></div>
+  <div class="box">
+    <p>蒐集資料：利用<b>網路或圖書館</b>。整理分析用<mark>筆記方格表</mark>：把多筆資料用表格整理、分類，閱讀清楚，也容易做比較。</p>
+  </div>
+  <div class="trap"><b>學習策略總整理：</b>背簍用<b>階層圖</b>（p.50）、老街用 <b>T 表／T 圖</b>（p.69）、兒童節用<b>筆記方格表</b>（p.96）。</div>
+</section>
+
+<div class="unit">第五單元　主題探究與實作：介紹家鄉有方法</div>
+
+<section>
+  <h2>介紹家鄉有方法 <span class="pg">p.98–107</span></h2>
+  <div class="box">
+    <p>例子：<b>臺東縣</b>國小四年甲班要到<b>臺中市</b>做校際交流，向對方介紹自己的家鄉。</p>
+    <ul>
+      <li><b>步驟 1 發現問題</b>：想一想要怎麼介紹家鄉</li>
+      <li><b>步驟 2 蒐集資料</b>：<b>上網查資料、圖書館查資料、訪問居民</b>（訪問居民可以獲得多元的資料）</li>
+      <li><b>步驟 3 整理分析</b>：選主題（著名美食、地形、氣候、位置、特殊節慶、景點…），再選介紹方式（口頭報告、製作海報、製作小書）</li>
+      <li><b>步驟 4 行動省思</b>：決定<mark>製作家鄉小書</mark>，因為小書可以呈現多元豐富的資料，又<b>方便攜帶</b>（只有口頭報告怕介紹不清楚，海報太大張不好攜帶）</li>
+    </ul>
+  </div>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th colspan="2">臺東縣小書的六個主題</th></tr>
+    <tr><td>位置</td><td>在臺灣<b>東部</b>，相鄰<b>花蓮縣、高雄市、屏東縣</b></td></tr>
+    <tr><td>地形</td><td>平原、盆地、台地、丘陵、山地</td></tr>
+    <tr><td>特殊節慶</td><td>元宵節<b>炮炸寒單爺</b>（掌管錢財的財神，用鞭炮幫怕冷的祂驅寒）</td></tr>
+    <tr><td>特色建築</td><td>蘭嶼鄉雅美族（達悟族）為躲避強風興建<b>地下屋</b></td></tr>
+    <tr><td>景點</td><td>綠島鄉<b>朝日溫泉</b>，臺灣難得一見的<b>海底溫泉</b></td></tr>
+    <tr><td>著名美食</td><td>東河鄉的<b>包子</b>，傳統手工製作</td></tr>
+  </table></div>
+  <div class="box">
+    <p><b>小書製作步驟：</b>1 材料 → 2 摺紙（摺出 <b>8 小格</b>）→ 3 裁剪（對摺後沿中間黑線剪開）→ 4 拉開 → 5 整理 → 6 完成</p>
+  </div>
+</section>
+
+<section>
+  <h2>附錄：臺灣行政區圖與六都 <span class="pg">p.111–112</span></h2>
+  <div class="box">
+    <p><b>六都</b>（六個直轄市）：<mark>臺北市、新北市、桃園市、臺中市、臺南市、高雄市</mark></p>
+    <ul>
+      <li>我們住的<b>新北市新店區</b>，旁邊有三峽區（三峽老街）、石碇區（種茶）、烏來區</li>
+      <li>桃園市<b>復興區</b>是高遶教堂所在；臺中市<b>和平區</b>種甜柿，<b>南屯區</b>有南屯老街，大甲區有媽祖繞境</li>
+      <li>課本出現過的縣：宜蘭（頭城）、花蓮、臺東（蘭嶼、綠島、達仁）、屏東（恆春、瑪家、霧臺）、南投（埔里）、苗栗、雲林（麥寮、西螺）、嘉義（阿里山）、彰化（鹿港）、澎湖（七美、西嶼）、金門（金城）</li>
+    </ul>
+  </div>
+  <div class="trap"><b>易錯：</b>新竹<b>市</b>和新竹<b>縣</b>、嘉義<b>市</b>和嘉義<b>縣</b>是不同的行政區，但都不是六都。</div>
+</section>
+
+<div class="unit">課本 QR Code 資源</div>
+
+<section>
+  <h2>關鍵字詞雙語對照表 <span class="pg">康軒官方</span></h2>
+  <p class="lede">課本 p.110「關鍵字詞雙語對照表」QR Code 的內容。這些字詞是康軒標出的各單元重點。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>單元</th><th>中文 → English</th></tr>
+    <tr><td><b>一</b> 自然環境</td><td>地圖 map・山地 mountain・丘陵 hill・台地 tableland・平原 plain・盆地 basin・氣候 climate・河川 river</td></tr>
+    <tr><td><b>二</b> 住屋與器物</td><td>傳統的 traditional・原住民族 indigenous peoples・住屋 house・木材 wood・泥土 soil・器物 utensil・塑膠 plastic・垃圾 garbage</td></tr>
+    <tr><td><b>三</b> 信仰與老街</td><td>信仰 belief・廟宇 temple・儀式 ritual・教堂 church・老街 old street・商店 shop・顧客 customer・騎樓 arcade</td></tr>
+    <tr><td><b>四</b> 作息與節日</td><td>季節 season・飛魚 flying fish・陽曆 solar calendar・農曆 lunar calendar・節慶 festival・母親節 Mother's Day・父親節 Father's Day・兒童節 Children's Day</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>學習資源：延伸網站 <span class="pg">康軒官方</span></h2>
+  <p class="lede">課本 p.110「學習資源」QR Code 列出的網站，可以在網路上搜尋網站名稱找到。</p>
+  <div class="tbl box" style="padding:6px 10px"><table>
+    <tr><th>單元</th><th>延伸網站</th></tr>
+    <tr><td><b>一</b></td><td>Google 地圖、臺灣電子地圖服務網、臺灣觀光資訊網兒童網（臺灣地形）、經濟部水利署</td></tr>
+    <tr><td><b>二</b></td><td>原住民族委員會兒童網、文化部國家文化記憶庫、臺灣原住民族傳統建築、美濃客家文物館主題網</td></tr>
+    <tr><td><b>三</b></td><td>臺灣原住民族文化知識網（祭儀信仰）、內政部全國宗教資訊網、實景旅遊網（老街整理列表）</td></tr>
+    <tr><td><b>四</b></td><td>臺灣原住民族文化知識網（祭儀信仰）、行政院國情簡介（傳統節慶）、聯合國（國際日和國際週列表）</td></tr>
+  </table></div>
+</section>
+
+<section id="quiz">
+  <h2>練習題</h2>
+  <div class="score"><span>答對 <b id="sc">0</b> ／ 已作答 <b id="done">0</b> ／ 共 <b id="tot">0</b> 題</span><button class="reset" id="reset" type="button">重新作答</button></div>
+  <div id="qs" style="display:flex;flex-direction:column;gap:12px"></div>
+</section>
+
+<footer>依據康軒版社會四上課本 p.6–107 及 p.111–112 附錄地圖照片整理。p.108–110 是圖照來源，沒有出題。</footer>
+</div>
+
+<script>
+const Q=[
+ // 是非
+ {k:'是非',q:'家鄉只能有一個，就是自己出生的地方。',o:['○','×'],a:1,w:'出生、成長或長期生活的地方都是家鄉，家鄉可能不只一個。（p.10）'},
+ {k:'是非',q:'想知道家鄉的地勢高低和河川分布，可以閱讀地形圖。',o:['○','×'],a:0,w:'地形圖用顏色表示高度，也畫出河川。（p.13）'},
+ {k:'是非',q:'想知道家鄉有哪些行政區，應該閱讀觀光導覽圖。',o:['○','×'],a:1,w:'行政區要看行政區圖；觀光導覽圖是看景點。（p.12–13）'},
+ {k:'是非',q:'比例尺表示實際距離在地圖上被縮小的程度。',o:['○','×'],a:0,w:'這就是比例尺的定義。（p.14）'},
+ {k:'是非',q:'圖例是用簡單的符號，表示實際景物的說明。',o:['○','×'],a:0,w:'例如 $ 代表銀行、文 代表學校。（p.14）'},
+ {k:'是非',q:'電子地圖切換成衛星模式，最容易看清楚道路和景物的名稱。',o:['○','×'],a:1,w:'找道路、景物名稱用「地圖模式」較快；衛星模式是看真實的房子、山地和樹林。（p.16–17）'},
+ {k:'是非',q:'盆地的地形是四周高、中間低平。',o:['○','×'],a:0,w:'例：埔里盆地。（p.20）'},
+ {k:'是非',q:'丘陵的高度在 1000 公尺以上。',o:['○','×'],a:1,w:'丘陵「不超過」1000 公尺；1000 公尺以上是山地。（p.21）'},
+ {k:'是非',q:'丘陵或山地起伏較大，居民活動受到限制，常在坡度較平緩的山坡地開闢茶園、果園。',o:['○','×'],a:0,w:'例：石碇種茶、和平區種水果。（p.23）'},
+ {k:'是非',q:'居民的活動不會改變地表的景觀。',o:['○','×'],a:1,w:'課本說居民的活動也改變了地表的景觀與樣貌（例：開闢茶園、建魚塭）。（p.23）'},
+ {k:'是非',q:'氣候是指一個地區某一天的天氣狀況。',o:['○','×'],a:1,w:'氣候是「長時間」的天氣平均狀況，不是某一天。（p.24）'},
+ {k:'是非',q:'澎湖雨下得比較少，所以居民選擇種植耐旱的花生。',o:['○','×'],a:0,w:'花生需水較少，適合少雨的澎湖。（p.26）'},
+ // 選擇
+ {k:'選擇',q:'頭城的圖畫中，下列哪一項和「自然環境」最沒有關係？',o:['①海上的海豚','②衝浪','③甜心芭樂','④慶讚中元的搶孤活動'],a:3,w:'搶孤是節慶活動；海豚、海浪、芭樂都和當地自然環境有關。（p.8–9）'},
+ {k:'選擇',q:'地圖上通常會標示四個要素，下列哪一項「不是」？',o:['①圖名','②方向標','③比例尺','④景點照片'],a:3,w:'四要素是圖名、方向標、比例尺、圖例。（p.14）'},
+ {k:'選擇',q:'比例尺「0 ─75─ 150公尺」中，黑色那一段代表實際距離多少？',o:['①0 公尺','②75 公尺','③150 公尺','④225 公尺'],a:1,w:'黑色或白色一段各代表 75 公尺。（p.14）'},
+ {k:'選擇',q:'如果地圖上沒有方向標，使用時最可能遇到什麼困擾？',o:['①不知道地圖的名稱','②不知道哪邊是北方','③不知道符號代表什麼','④不知道距離多遠'],a:1,w:'方向標表示方位。②名稱是圖名、③符號是圖例、④距離是比例尺。（p.14）'},
+ {k:'選擇',q:'小明想知道臺北市有哪些好吃好玩的景點，應該看哪一種地圖？',o:['①行政區圖','②交通路線圖','③地形圖','④觀光導覽圖'],a:3,w:'景點看觀光導覽圖。（p.13）'},
+ {k:'選擇',q:'電子地圖的「地圖模式」中，藍色線條最可能代表什麼？',o:['①河流','②主要道路','③公園','④捷運站'],a:0,w:'藍色線條是河流（如大里溪、廍子溪）；黃色是主要道路，綠色區塊是公園綠地。（p.16）'},
+ {k:'選擇',q:'衛星模式中，左邊一大塊灰白色的區域最可能是什麼？',o:['①山地','②樹林','③密集的房子','④河流'],a:2,w:'灰白色是房子密集的市區；深綠色才是山地樹林。（p.17）'},
+ {k:'選擇',q:'社會充電站「利用地圖探索家鄉」的步驟，正確的順序是？',o:['①設計圖例→查詢電子地圖→參訪景點→製作地圖','②查詢電子地圖→設計圖例→製作地圖→參訪景點','③製作地圖→查詢電子地圖→設計圖例→參訪景點','④參訪景點→製作地圖→設計圖例→查詢電子地圖'],a:1,w:'先查電子地圖，再設計圖例、製作地圖，最後參訪景點。（p.18–19）'},
+ {k:'選擇',q:'「頂部平坦，邊緣以陡坡和低地相接」是哪一種地形？',o:['①平原','②盆地','③台地','④丘陵'],a:2,w:'這是台地，例：大肚台地。（p.21）'},
+ {k:'選擇',q:'下列地形和例子的配對，哪一項「不正確」？',o:['①宜蘭平原','②埔里盆地','③苗栗丘陵','④中央台地'],a:3,w:'應該是「中央山脈」，屬於山地。（p.20–21）'},
+ {k:'選擇',q:'臺北市信義區高樓林立、交通便利，它位在哪一種地形？',o:['①平原','②盆地','③丘陵','④山地'],a:1,w:'課本：家鄉位在盆地，周圍有許多山圍繞，是熱鬧的大都市。（p.22）'},
+ {k:'選擇',q:'靠海的平原地區，可能會看到什麼景象？',o:['①一池池魚塭的漁村','②山坡上的茶園','③高山上的果園','④四周高的盆地'],a:0,w:'例：屏東枋寮有很多魚塭。（p.22）'},
+ {k:'選擇',q:'新北市石碇區的居民很久以前便種茶、製茶，主要原因是？',o:['①位在平原、交通便利','②位在丘陵、氣候適宜且排水良好','③靠近海邊、可以養魚','④位在盆地、人口很多'],a:1,w:'石碇是丘陵，氣候適宜、排水良好。（p.23）'},
+ {k:'選擇',q:'從氣溫圖來看，哪一個地方「四季氣溫高」？',o:['①宜蘭','②基隆','③屏東恆春','④九份'],a:2,w:'恆春 1 月還有 21.1°C；宜蘭是夏熱冬冷。（p.24）'},
+ {k:'選擇',q:'高雄的雨量有什麼特色？',o:['①四季多雨','②夏季多雨、冬季少雨','③夏季少雨、冬季多雨','④整年都很少雨'],a:1,w:'6–8 月超過 300 毫米，2 月只有 17.7 毫米。四季多雨的是基隆。（p.25）'},
+ {k:'選擇',q:'九份的屋頂使用瀝青製成的油毛氈，主要是為了適應什麼氣候？',o:['①常常下雨','②天氣炎熱','③很少下雨','④冬天很冷'],a:0,w:'黑色油毛氈屋頂是很好的防雨建材。（p.26）'},
+ // 第一單元 p.27-31
+ {k:'是非',q:'河川、湖泊、地下水、海洋，都是家鄉重要的水資源。',o:['○','×'],a:0,w:'課本列出的四種水資源。（p.27）'},
+ {k:'選擇',q:'濁水溪冬季時部分河床裸露，主要原因是？',o:['①冬季雨量較少','②冬季氣溫較低','③河水都被拿去發電','④河川改道'],a:0,w:'河川水量會因季節的降雨量而不同。（p.27）'},
+ {k:'選擇',q:'河水除了流入海洋，還可能變成什麼？',o:['①湖泊','②地下水','③雲','④冰河'],a:1,w:'河水多流入海洋或滲入地下成為地下水。（p.27）'},
+ {k:'選擇',q:'政府在河川中、上游建水庫，下列哪一項「不是」課本提到的水庫功能？',o:['①供給民生與工業用水','②灌溉','③水力發電','④舉辦廟會'],a:3,w:'水庫功能：民生與工業用水、灌溉、水力發電。（p.28）'},
+ {k:'是非',q:'保護家鄉的水資源只是政府的責任，和我們無關。',o:['○','×'],a:1,w:'保護家鄉的水資源是大家的責任。（p.28）'},
+ {k:'選擇',q:'想查陽明山的氣溫和雨量資料，最適合上哪個網站？',o:['①中央氣象署','②觀光導覽網','③交通部高鐵','④圖書館'],a:0,w:'查中央氣象署網站的竹子湖觀測站。（p.30）'},
+ {k:'選擇',q:'依課本竹子湖資料，降雨量最少的月分是？',o:['①一月','②三月','③四月','④七月'],a:2,w:'四月 176.5 毫米最少，其次三月 193.1、七月 215.7。（p.30）'},
+ {k:'選擇',q:'「何時旅遊比較好」探究活動中，最後怎麼決定戶外教育的時間？',o:['①老師一個人決定','②抽籤','③大家發表看法後共同投票','④選人最少的月分'],a:2,w:'行動省思：發表各自的看法，共同投票決定。（p.31）'},
+ // 第二單元
+ {k:'選擇',q:'早期原住民族「就地取材」搭建傳統住屋，下列哪一種「不是」課本列出的材料？',o:['①石板','②竹子','③茅草','④鋼筋混凝土'],a:3,w:'材料是石板、木頭、竹子、茅草。鋼筋混凝土是現代樓房的材料。（p.34–35）'},
+ {k:'選擇',q:'蘭嶼的雅美族（達悟族）興建比較低矮的半地下式住屋，主要是為了？',o:['①躲避強風','②方便種田','③防止淹水','④觀光'],a:0,w:'地下屋可以躲避強風的侵襲。（p.34）'},
+ {k:'選擇',q:'石板屋被稱為「會呼吸的房子」，是因為？',o:['①有很多窗戶','②煙可以順著石板之間的縫隙往外飄','③屋頂可以打開','④會隨天氣變形'],a:1,w:'升火的煙讓木頭防腐、防蟲，再從石板縫隙飄出。（p.35）'},
+ {k:'是非',q:'石板屋因為石板厚，夏天隔熱、冬天保暖，住起來「冬暖夏涼」。',o:['○','×'],a:0,w:'（p.35）'},
+ {k:'選擇',q:'用竹子當骨架，再敷上泥土建造的房屋叫做？',o:['①土埆厝','②竹管仔厝','③石板屋','④三合院'],a:1,w:'竹管仔厝，例：雲林縣麥寮鄉。土埆厝是用稻稈、泥土和水做成土磚。（p.36）'},
+ {k:'選擇',q:'正身加上「單邊」護龍的住屋形式叫做？',o:['①一條龍','②單伸手','③三合院','④四合院'],a:1,w:'一條龍只有正身；單伸手加一邊；三合院加兩邊。（p.37）'},
+ {k:'選擇',q:'住屋從一條龍變成三合院，課本說主要原因是？',o:['①家中人口增加、經濟條件改善','②颱風變多','③政府規定','④流行'],a:0,w:'因家中成員改變或經濟條件改善。（p.37）'},
+ {k:'選擇',q:'三合院中，供奉神明和祖先牌位、接待客人的地方是？',o:['①稻埕','②正廳','③護龍','④堆肥場'],a:1,w:'正廳在正身中間。（p.39）'},
+ {k:'選擇',q:'三合院的「稻埕」可以用來做什麼？',o:['①只能曬穀','②曬穀、孩童遊戲、乘涼聊天、祭拜請客','③養魚','④堆肥'],a:1,w:'稻埕是多用途的場所。（p.39）'},
+ {k:'選擇',q:'三合院旁的水池，除了洗東西、養魚，還有什麼功能？',o:['①發電','②發生火災時可以滅火','③灌溉稻田','④當作游泳池'],a:1,w:'（p.39）'},
+ {k:'是非',q:'三合院的左右，是人站在正廳前「面朝外」時來看。傳統觀念以左為尊，房間「左大右小」。',o:['○','×'],a:0,w:'（p.39）'},
+ {k:'選擇',q:'許多傳統住屋拆除改建成鋼筋混凝土樓房，下列哪一項「不是」原因？',o:['①工商業的發展','②生活方式的轉變','③建築材料的革新','④石板用完了'],a:3,w:'課本提到工商業發展、生活方式轉變、建築材料革新。（p.40）'},
+ {k:'選擇',q:'澎湖縣西嶼鄉二崁村保存了完整的歷史建築，被政府選定為？',o:['①古蹟','②文化聚落保存區','③國家公園','④觀光夜市'],a:1,w:'（p.41）'},
+ {k:'選擇',q:'原住民族用竹子、藤製作的魚筌，用途是？',o:['①搗製食物','②捕捉魚蝦','③包裹食物','④背小孩'],a:1,w:'木杵搗食物、植物葉子包食物、背簍背東西。（p.43）'},
+ {k:'選擇',q:'魚筌旁邊留有空隙，讓小魚可以游出去，這樣設計是為了？',o:['①節省材料','②讓魚群生生不息，不被捕光','③比較輕','④方便清洗'],a:1,w:'祖先的智慧。（p.43）'},
+ {k:'選擇',q:'用灶燒完木柴後，冷卻的灰燼可以拿來做什麼？',o:['①當菜園的肥料','②當建材','③丟進河川','④做成碗'],a:0,w:'餘溫可悶地瓜，冷卻後當肥料，物盡其用。（p.45）'},
+ {k:'選擇',q:'塑膠器物雖然輕便又便宜，但對環境有什麼影響？',o:['①不易在自然環境中分解，變成難處理的垃圾','②會讓土地變肥沃','③可以吸收汙染','④沒有影響'],a:0,w:'所以要響應減塑運動，選擇可重複使用的器物。（p.46–47）'},
+ {k:'選擇',q:'民國 112 年淨灘撿到最多的海洋廢棄物是？',o:['①塑膠瓶蓋','②寶特瓶','③菸蒂','④玻璃瓶'],a:1,w:'寶特瓶 67076 件最多，其次是塑膠瓶蓋。（p.46）'},
+ {k:'選擇',q:'布農族的背簍，框架和簍身分別用什麼做？',o:['①竹子／木頭','②藤條／藤皮','③石板／茅草','④藤皮／藤條'],a:1,w:'框架用藤條，簍身用藤皮。（p.51）'},
+ // 第三單元
+ {k:'選擇',q:'大甲的圖畫中，哪一個特色和傳統信仰有關？',o:['①日南車站','②鐵砧山','③媽祖繞境','④芋頭'],a:2,w:'媽祖繞境相傳可以保佑地方平安。（p.52–53）'},
+ {k:'選擇',q:'原住民族在播種、收割、狩獵時舉行祭典或儀式，目的是？',o:['①吸引觀光客','②表達對祖靈或神靈的敬畏，並祈求保佑','③比賽誰比較厲害','④賣東西'],a:1,w:'（p.54）'},
+ {k:'選擇',q:'相信祖靈每五年回部落探訪子孫，而舉行五年祭的是哪一族？',o:['①排灣族','②鄒族','③泰雅族','④雅美族'],a:0,w:'臺東縣達仁鄉排灣族，感謝與追念祖先。（p.54）'},
+ {k:'選擇',q:'「戰祭」是哪一族重要的祭典？',o:['①排灣族','②鄒族','③泰雅族','④布農族'],a:1,w:'嘉義縣阿里山鄉鄒族，祈求天神保佑並團結族人。（p.54）'},
+ {k:'選擇',q:'泰雅族「彩虹橋傳說」中，族人要學會哪些技巧才能通過彩虹橋？',o:['①捕魚和種田','②打獵和織布','③唱歌和跳舞','④蓋房子和煮飯'],a:1,w:'男生學打獵、女生學織布。（p.55）'},
+ {k:'選擇',q:'「福德正神」是哪一位神明的別稱？',o:['①媽祖','②土地公','③觀世音','④關公'],a:1,w:'媽祖的稱號是「天上聖母」。（p.56–57）'},
+ {k:'選擇',q:'媽祖主要保佑什麼？',o:['①作物豐收','②航海平安','③考試順利','④身體健康'],a:1,w:'土地公才是保佑作物豐收。（p.56）'},
+ {k:'是非',q:'土地公廟是臺灣最常見的廟宇。',o:['○','×'],a:0,w:'（p.56）'},
+ {k:'是非',q:'廟前廣場是大家休閒聚會的地方，廟宇的活動也能聯絡家鄉居民的感情。',o:['○','×'],a:0,w:'（p.57）'},
+ {k:'選擇',q:'有些廟宇減少燒香、改用雙手合掌，主要原因是？',o:['①響應環保','②香太貴','③信徒變少','④政府禁止拜拜'],a:0,w:'現代生活觀念轉變，為了響應環保。（p.58–59）'},
+ {k:'選擇',q:'同學說星期天要和家人去教會做禮拜，不能一起打球。比較好的做法是？',o:['①叫他不要去教會','②笑他','③尊重他，改約其他時間','④以後不跟他玩'],a:2,w:'面對不同的信仰，應該尊重與包容。（p.58–59）'},
+ {k:'選擇',q:'有些原住民族除了祖靈信仰，也信仰基督教或天主教，主要原因是？',o:['①外來文化的傳入','②政府規定','③祖靈消失了','④為了觀光'],a:0,w:'透過宗教信仰尋求心靈的慰藉。（p.60）'},
+ {k:'選擇',q:'高遶教堂位在哪裡？',o:['①臺東縣達仁鄉','②桃園市復興區','③嘉義縣阿里山鄉','④新北市三峽區'],a:1,w:'桃園市復興區高遶部落，在羅馬公路上。（p.60）'},
+ {k:'選擇',q:'「高遶」（Qoyaw）在泰雅族語中是什麼意思？',o:['①彩虹','②長枝竹','③大石頭','④教堂'],a:1,w:'長枝竹穩固不易斷，是很好的材料。（p.60）'},
+ {k:'選擇',q:'高遶教堂使用建材的先後順序，哪一個正確？',o:['①竹子→土磚→方石→鋼筋水泥','②方石→竹子→土磚→鋼筋水泥','③土磚→竹子→鋼筋水泥→方石','④鋼筋水泥→方石→土磚→竹子'],a:0,w:'（p.60–61）'},
+ {k:'選擇',q:'民國 62 年高遶教堂地基下陷、產生縫隙，原因是？',o:['①颱風','②地震','③開闢羅馬公路','④河水氾濫'],a:2,w:'後來靠捐助的資金，用鋼筋水泥重建。（p.61）'},
+ {k:'選擇',q:'三峽老街的廟宇是哪一座？',o:['①大甲鎮瀾宮','②三峽祖師廟','③龍山寺','④土地公廟'],a:1,w:'已有兩百多年的歷史。（p.62）'},
+ {k:'選擇',q:'下列哪一項是三峽老街的特色產品？',o:['①芋頭酥餅','②金牛角麵包和藍染','③花生','④甜心芭樂'],a:1,w:'芋頭、酥餅是大甲；花生是澎湖；芭樂是頭城。（p.63）'},
+ {k:'選擇',q:'家鄉的老街最早大多是怎麼形成的？',o:['①政府規畫','②商人、小販聚集到廟宇附近買賣，形成市集或商店街','③火車站旁邊蓋房子','④觀光客要求'],a:1,w:'廟宇是人們經常聚集的地方。（p.64）'},
+ {k:'是非',q:'市集是在固定時間、地點，進行貨物買賣的場所。',o:['○','×'],a:0,w:'（p.64 小百科）'},
+ {k:'選擇',q:'老街店鋪前面的騎樓，主要功能是？',o:['①讓顧客和行人遮陽避雨','②停車','③曬穀','④祭拜'],a:0,w:'例：金門金城老街保有完整的騎樓。（p.65）'},
+ {k:'選擇',q:'老街的商家通常住在哪裡？',o:['①很遠的三合院','②店鋪的後方或樓上','③廟宇裡','④騎樓下'],a:1,w:'所以店家可以兼顧工作與生活作息。（p.65）'},
+ {k:'選擇',q:'臺南市橋南老街早期很熱鬧，後來沒落轉為寧靜的住宅區，原因是？',o:['①港口淤積','②地震','③火車停駛','④政府拆除'],a:0,w:'（p.66）'},
+ {k:'選擇',q:'早期有許多製造、買賣農具的店鋪，現在老店和新興商店並存的是哪一條老街？',o:['①鹿港老街','②南屯老街','③橋南老街','④金城老街'],a:1,w:'臺中市南屯老街，是居民平日購物的商店街。（p.66）'},
+ {k:'選擇',q:'經過規畫與維護，保留許多早期閩南式建築，吸引國內外遊客的是？',o:['①橋南老街','②南屯老街','③鹿港老街','④三峽老街'],a:2,w:'彰化縣鹿港老街。（p.66）'},
+ {k:'是非',q:'老街保留了過去家鄉先民生活的記憶，是家鄉重要的文化特色。',o:['○','×'],a:0,w:'（p.66）'},
+ {k:'選擇',q:'近年來家鄉出現不同文化的商店，街道呈現多元風貌，主要原因是？',o:['①新住民移入、國際移工增加','②廟宇變多','③老街沒落','④人口減少'],a:0,w:'（p.67）'},
+ {k:'選擇',q:'臺北市北平西路被稱為「印尼街」，是因為？',o:['①有很多印尼的觀光客','②有許多販賣印尼飲食、服飾、雜貨的商店','③街道是印尼人蓋的','④位在印尼'],a:1,w:'印尼特色美食是薑黃飯。（p.67）'},
+ {k:'選擇',q:'花蓮火車站附近的街道有不少賣特色食品的商店，主要是為了？',o:['①因應觀光人潮','②供應學校午餐','③出口到國外','④祭拜神明'],a:0,w:'花蓮特色美食是麻糬。（p.67）'},
+ {k:'選擇',q:'「家鄉的老街有哪些特色」探究活動，是用什麼工具整理資料？',o:['①階層圖','②T 表／T 圖','③長條圖','④地形圖'],a:1,w:'把老街地址、特色商品食物、特色建築填入 T 表。（p.69）'},
+ {k:'選擇',q:'雲林縣西螺老街的特色建築是？',o:['①閩南式三合院','②西式風格的洋樓街屋','③石板屋','④竹管仔厝'],a:1,w:'百年前的時尚建築。（p.68）'},
+ // 第四單元
+ {k:'選擇',q:'「日出而作，日入而息」描寫的是什麼？',o:['①傳統一天的生活作息','②現代上班族的作息','③週休二日','④夜市生活'],a:0,w:'白天工作，夜晚休息。（p.72）'},
+ {k:'選擇',q:'雅美族（達悟族）一年中最後一次享用飛魚乾，是舉行哪一個祭典？',o:['①飛魚招魚祭','②飛魚收藏祭','③飛魚終食祭','④豐年祭'],a:2,w:'招魚祭開始捕撈，收藏祭結束捕撈並曬乾，終食祭停止食用。（p.73）'},
+ {k:'選擇',q:'雅美族規範捕撈、食用飛魚的時間，除了表達對飛魚的尊敬，還有什麼意義？',o:['①賣更多錢','②與自然共處，避免過度捕撈','③讓飛魚長大','④方便觀光'],a:1,w:'（p.73）'},
+ {k:'選擇',q:'臺灣的稻米通常一年可以種植並收穫幾次？',o:['①一次','②兩次','③三次','④四次'],a:1,w:'第一期和第二期。（p.73）'},
+ {k:'選擇',q:'布農族把全年要做的事刻在木板上，這叫做？',o:['①農民曆','②木刻畫曆','③口耳相傳','④T 表'],a:1,w:'提醒族人生活要規律，也能傳承知識與文化。（p.75）'},
+ {k:'選擇',q:'魯凱族選在冬天打獵，原因是？',o:['①冬天獵物比較多','②天氣冷，獵物比較容易保存','③冬天不用種田','④冬天比較不會下雨'],a:1,w:'這是用口耳相傳的方式流傳下來。（p.74）'},
+ {k:'選擇',q:'漢人的農民曆，是祖先怎麼發明的？',o:['①觀察自然的變化','②向外國學習','③政府規定','④看電視'],a:0,w:'（p.76）'},
+ {k:'是非',q:'農民曆上適合種植與捕撈的時期來自傳統經驗，現今的情況不一定相同。',o:['○','×'],a:0,w:'科技發展、技術提升。（p.76）'},
+ {k:'選擇',q:'現代人改用陽曆與星期制，有了工作日與休息日的區別，主要原因是？',o:['①生活和工作內容比過去複雜許多','②農民曆不見了','③天氣變了','④太陽變了'],a:0,w:'現代作息逐漸脫離配合自然變化的生活步調。（p.78）'},
+ {k:'是非',q:'我們現在使用的陽曆也稱為國曆。',o:['○','×'],a:0,w:'（p.78）'},
+ {k:'選擇',q:'政府實施什麼制度後，人們有更多時間安排休閒活動？',o:['①農民曆','②週休二日','③木刻畫曆','④星期制'],a:1,w:'（p.79）'},
+ {k:'選擇',q:'在春季舉行播種祭，並讓小朋友第一個播種的是哪一族？',o:['①邵族','②阿美族','③太魯閣族','④卑南族'],a:0,w:'國曆 4 月，代表作物能健康成長。（p.80）'},
+ {k:'選擇',q:'阿美族的豐年祭，外人想參加歌舞時應該？',o:['①直接跳進去','②受到邀請才可以參與','③付錢就可以','④拍照上傳'],a:1,w:'歌舞是族人感謝上天的表現。（p.80）'},
+ {k:'選擇',q:'卑南族大獵祭後，為狩獵回來的男子戴上花環，花環愈多層代表？',o:['①打到的獵物愈多','②地位愈崇高','③年紀愈小','④跑得愈快'],a:1,w:'花環有表達尊敬、情誼的意義。（p.81）'},
+ {k:'選擇',q:'太魯閣族在國曆 10 月舉行的祭典是？',o:['①播種祭','②豐年祭','③感恩祭','④大獵祭'],a:2,w:'感謝祖先庇佑五穀豐收。（p.81）'},
+ {k:'選擇',q:'「農閒時間」是指什麼？',o:['①農民完成每一階段農事後的閒暇時間','②下雨不能種田的時間','③晚上睡覺的時間','④過年的時間'],a:0,w:'漢人利用農閒時間舉辦節慶。（p.82 小百科）'},
+ {k:'選擇',q:'下列漢人節慶中，哪一個是用「國曆」計算日期？',o:['①春節','②端午節','③清明節','④中秋節'],a:2,w:'清明節是國曆 4 月 5 日（或 4、6 日）。（p.83）'},
+ {k:'選擇',q:'春節慶祝活動的尾聲是哪一個節日？',o:['①除夕','②元宵節','③清明節','④端午節'],a:1,w:'農曆 1 月 15 日，燈會、猜燈謎、吃元宵。（p.83）'},
+ {k:'選擇',q:'端午節配戴香包、在門口插艾草，主要是為了？',o:['①防蚊蟲疾病，祈求健康平安','②裝飾好看','③紀念祖先','④慶祝豐收'],a:0,w:'端午天氣炎熱，易生蚊蟲與疾病。（p.83）'},
+ {k:'選擇',q:'中元節祭拜孤魂、放水燈，傳達了什麼精神？',o:['①勇敢','②博愛','③節儉','④團結'],a:1,w:'普渡亡靈。（p.84）'},
+ {k:'選擇',q:'賽夏族祖靈祭和漢人祭祖活動，相同的地方是？',o:['①供品一樣','②場所一樣','③都在祭拜祖先','④時間一樣'],a:2,w:'方式不同，但敬畏祖先、感恩與祈福的心意一樣。（p.85）'},
+ {k:'選擇',q:'母親節是哪一天？',o:['①5 月 5 日','②5 月第二個星期日','③8 月 8 日','④4 月 4 日'],a:1,w:'8/8 父親節、4/4 兒童節。（p.87）'},
+ {k:'選擇',q:'下列哪一個屬於「各行各業的節日」？',o:['①兒童節','②教師節','③國慶日','④耶誕節'],a:1,w:'勞動節、警察節（6/15）、教師節（9/28）。（p.88）'},
+ {k:'選擇',q:'國慶日是國曆哪一天？',o:['①1 月 1 日','②10 月 10 日','③3 月 29 日','④12 月 25 日'],a:1,w:'1/1 是開國紀念日。（p.89）'},
+ {k:'選擇',q:'潑水節時大家朝對方相互潑水，意思是？',o:['①吵架','②給對方祝福，洗去過去一年的不順利','③天氣太熱','④比賽'],a:1,w:'泰國傳統的新年習俗。（p.90）'},
+ {k:'選擇',q:'家鄉出現潑水節、耶誕節等節日，主要原因是？',o:['①國際交流與新住民加入','②農民曆規定','③原住民族祭典','④政府放假'],a:0,w:'反映家鄉社會多元的風貌，我們應尊重多元文化。（p.90–91）'},
+ {k:'選擇',q:'世界地球日是國曆哪一天？',o:['①4 月 4 日','②4 月 22 日','③4 月 23 日','④6 月 1 日'],a:1,w:'4/23 是世界閱讀日。（p.92）'},
+ {k:'選擇',q:'訂定世界地球日、世界閱讀日這類節日，主要目的是？',o:['①讓大家放假','②引起大家對重要議題的重視','③紀念國家大事','④慶祝豐收'],a:1,w:'這是「與議題相關的節日」。（p.92）'},
+ {k:'選擇',q:'下列哪一項是世界閱讀日常見的活動？',o:['①淨灘','②自行車遊行','③舊書交換、繪本導讀','④划龍舟'],a:2,w:'淨灘、自行車遊行是世界地球日的活動。（p.92–93）'},
+ {k:'選擇',q:'新加坡的兒童節，兒童和家長都放假，目的是？',o:['①促進家庭和諧、增進親子關係','②讓學校休息','③慶祝國慶','④紀念耶穌'],a:0,w:'訂在每年 10 月的第一個星期五。（p.94）'},
+ {k:'選擇',q:'捷克的兒童節是哪一天？',o:['①4 月 4 日','②6 月 1 日','③10 月第一個星期五','④12 月 25 日'],a:1,w:'透過活動喚醒眾人對兒童權益的重視。（p.94）'},
+ {k:'選擇',q:'把各國兒童節的日期、活動整理成表格方便比較，用的學習策略是？',o:['①階層圖','②T 表','③筆記方格表','④心智圖'],a:2,w:'（p.96–97）'},
+ {k:'選擇',q:'臺東縣四年甲班最後決定用「家鄉小書」介紹家鄉，原因是？',o:['①小書可呈現多元豐富的資料，又方便攜帶','②小書最便宜','③老師規定','④不用寫字'],a:0,w:'只有口頭報告怕介紹不清楚，海報太大張不好攜帶。（p.101）'},
+ {k:'選擇',q:'下列哪一個「不是」課本提到蒐集家鄉資料的方式？',o:['①上網查資料','②圖書館查資料','③訪問居民','④自己編故事'],a:3,w:'訪問居民可以獲得多元的資料。（p.100）'},
+ {k:'選擇',q:'臺東縣的元宵節有什麼特殊活動？',o:['①媽祖繞境','②炮炸寒單爺','③放水燈','④划龍舟'],a:1,w:'寒單爺是掌管錢財的財神，用鞭炮幫怕冷的祂驅寒。（p.102）'},
+ {k:'選擇',q:'綠島鄉的朝日溫泉有什麼特別？',o:['①是臺灣難得一見的海底溫泉','②在山頂上','③是冷泉','④在臺北'],a:0,w:'（p.103）'},
+ {k:'選擇',q:'臺東縣位在臺灣哪裡？相鄰的縣市是？',o:['①北部，相鄰新北市','②東部，相鄰花蓮縣、高雄市、屏東縣','③西部，相鄰臺南市','④中部，相鄰南投縣'],a:1,w:'（p.102）'},
+ {k:'選擇',q:'下列哪一個「不是」六都（直轄市）？',o:['①新北市','②桃園市','③新竹市','④臺南市'],a:2,w:'六都：臺北、新北、桃園、臺中、臺南、高雄。（p.112）'},
+ // 雙語關鍵字（康軒雙語對照表）
+ {k:'雙語',q:'「台地」的英文是？',o:['①plain','②basin','③tableland','④hill'],a:2,w:'plain 平原、basin 盆地、hill 丘陵。'},
+ {k:'雙語',q:'「basin」是哪一種地形？',o:['①平原','②盆地','③山地','④丘陵'],a:1,w:'四周高、中間低平的盆地。'},
+ {k:'雙語',q:'「氣候」的英文是？',o:['①climate','②season','③river','④map'],a:0,w:'season 是季節。'},
+ {k:'雙語',q:'「indigenous peoples」是指？',o:['①漢人','②原住民族','③新住民','④顧客'],a:1,w:''},
+ {k:'雙語',q:'「utensil」是什麼意思？',o:['①住屋','②木材','③器物','④垃圾'],a:2,w:'house 住屋、wood 木材、garbage 垃圾。'},
+ {k:'雙語',q:'老街上供行人遮陽避雨的「騎樓」，英文是？',o:['①arcade','②temple','③shop','④church'],a:0,w:'temple 廟宇、church 教堂。'},
+ {k:'雙語',q:'「ritual」是什麼意思？',o:['①信仰','②儀式','③節慶','④顧客'],a:1,w:'belief 信仰、festival 節慶、customer 顧客。'},
+ {k:'雙語',q:'「lunar calendar」是？',o:['①陽曆','②農曆','③星期','④農民曆的「宜」'],a:1,w:'solar calendar 是陽曆（國曆）。'},
+ {k:'雙語',q:'雅美族捕撈的「flying fish」是？',o:['①飛魚','②旗魚','③鯨魚','④虱目魚'],a:0,w:''},
+
+];
+const qs=document.getElementById('qs'),sc=document.getElementById('sc'),dn=document.getElementById('done');
+document.getElementById('tot').textContent=Q.length;
+let right=0,done=0;
+function render(){
+  qs.innerHTML='';right=0;done=0;sc.textContent=0;dn.textContent=0;
+  let n={是非:0,選擇:0,雙語:0};
+  Q.forEach((x,i)=>{
+    n[x.k]++;
+    const d=document.createElement('div');d.className='q';
+    d.innerHTML=`<div class="tag">${x.k}題 ${n[x.k]}</div><div class="stem">${x.q}</div><div class="opts"></div>`;
+    const box=d.querySelector('.opts');
+    x.o.forEach((t,j)=>{
+      const b=document.createElement('button');b.type='button';b.className='opt';b.id=`q${i}o${j}`;b.textContent=t;
+      b.onclick=()=>{
+        const all=box.querySelectorAll('.opt');all.forEach(z=>z.disabled=true);
+        all[x.a].classList.add('right');
+        const ok=j===x.a; if(!ok) b.classList.add('wrong');
+        done++; if(ok) right++; sc.textContent=right; dn.textContent=done;
+        const w=document.createElement('div');w.className='why'+(ok?'':' no');
+        w.textContent=(ok?'答對！':'答案是「'+x.o[x.a]+'」。')+(x.w||'');d.appendChild(w);
+      };
+      box.appendChild(b);
+    });
+    qs.appendChild(d);
+  });
+}
+document.getElementById('reset').onclick=render;
+render();
+</script>
+
+</body></html>
