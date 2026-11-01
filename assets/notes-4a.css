@@ -139,6 +139,9 @@ ul.kinds{margin:6px 0 0;padding-left:1.1em}
 figure.fig.pic { padding: 6px; }
 figure.fig.pic img { width: 100%; height: auto; display: block; border-radius: 6px; }
 figure.fig.pic a { display: block; }
+.sum-sheet { background: var(--card); border: 2px solid var(--theme); border-radius: 12px; padding: 8px 14px; margin: 10px 0 14px; }
+.sum-sheet summary { cursor: pointer; font-weight: 700; color: var(--theme); }
+.sum-sheet img { width: 100%; max-width: 640px; height: auto; display: block; margin: 10px auto 4px; border-radius: 8px; }
 @media print {
   .scope, .toc { display: none !important; }
   body.s12 .later { display: none !important; }
