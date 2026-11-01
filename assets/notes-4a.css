@@ -141,7 +141,7 @@ ul.kinds{margin:6px 0 0;padding-left:1.1em}
 }
 
 /* 說明用圖（dg = diagram） */
-.dg{width:100%;height:auto;display:block;margin:8px auto;max-width:560px}
+.dg{width:100%;height:auto;display:block;margin:8px auto;max-width:760px}
 .dg text{font-family:var(--f-body);fill:var(--ink);font-size:14px;text-anchor:middle}
 .dg .b{font-weight:700}
 .dg .l{font-size:16px;font-weight:700}
@@ -151,3 +151,7 @@ ul.kinds{margin:6px 0 0;padding-left:1.1em}
 .dg .ar{stroke:var(--accent);stroke-width:2.4;fill:none;stroke-linecap:round}
 .dg .ah{fill:var(--accent)}
 .dg .card{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.dg .h{paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}
+.dg .ld{stroke:var(--ink);stroke-width:1.1;fill:none}
+.dg .sm{font-size:12.5px}
+.dg .tt{font-size:15px;font-weight:700}
