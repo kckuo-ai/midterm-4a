@@ -1,0 +1,59 @@
+/* 四上專用補充樣式（共用的 style.css、quiz.js 與 midterm-3a 相同，這個檔案只放四上重點頁需要的額外樣式） */
+:root {
+  --paper: var(--bg);
+  --plain: #8fbf6a;   /* 平原綠 */
+  --hill: #d9b25a;    /* 丘陵黃 */
+  --mount: #a8693c;   /* 山地褐 */
+  --water: #2f7fb8;   /* 河川藍 */
+  --okbg: var(--ok-bg);
+  --badbg: var(--bad-bg);
+  --hl: var(--mark);
+  --f-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --f-disp: var(--f-body);
+}
+.notes section { margin: 0; }
+.notes h2 .pg, .notes h3 .pg { font-size: 14px; font-weight: 500; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 9px; margin-left: 6px; vertical-align: 3px; white-space: nowrap; }
+.notes .sub p { margin: 0; }
+.notes .box p { margin: 4px 0; }
+.notes .box h3 { margin: 4px 0 6px; }
+.notes .box > .tbl table { margin: 4px 0; }
+.notes svg { max-width: 100%; }
+.notes svg text { font-family: var(--f-body); }
+.notes .num { font-variant-numeric: tabular-nums; }
+.notes .tbl { overflow-x: visible; }
+.notes .tbl table { table-layout: auto; overflow-wrap: anywhere; }
+.notes .tbl td:first-child b { white-space: nowrap; }
+.notes .wrap, .wrap.notes { overflow-x: clip; }
+
+/* 階層圖：桌面橫排，手機直排方塊 */
+.hier { display: flex; flex-direction: column; align-items: stretch; margin: 10px 0; }
+.h-root { align-self: center; background: var(--hc, var(--theme)); color: #fff; font-weight: 700; font-size: 18px; padding: 8px 18px; border-radius: 8px; text-align: center; }
+.h-kids { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 22px; position: relative; }
+.h-kids::before { content: ""; position: absolute; left: 50%; top: -22px; height: 22px; border-left: 2px solid var(--line); }
+.h-node { background: var(--card); border: 2px solid var(--hc, var(--theme)); border-radius: 10px; padding: 10px 12px; min-width: 0; }
+.h-mid { font-weight: 700; font-size: 17px; margin-bottom: 4px; }
+.h-node ul { margin: 0; padding-left: 1.1em; font-size: 16px; }
+
+/* 地形階梯圖 */
+.ladder svg { width: 100%; height: auto; display: block; }
+
+/* 手機：表格改卡片、階層圖直排 */
+@media (max-width: 560px) {
+  .tbl table, .tbl tbody, .tbl tr, .tbl td, .tbl th { display: block; width: auto; }
+  .notes .tbl table { border: 0; background: transparent; }
+  .tbl tr { padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); margin: 0 0 8px; }
+  .tbl tr.hdr { display: none; }
+  .notes .tbl td, .notes .tbl th { border: 0; padding: 2px 0; }
+  .tbl td:first-child { font-weight: 700; }
+  .tbl td[data-label]::before { content: attr(data-label) "："; color: var(--muted); font-size: 14px; font-weight: 400; }
+  .tbl td:first-child[data-label]::before { content: none; }
+  .h-kids { grid-template-columns: 1fr; gap: 8px; margin-top: 14px; border-left: 2px solid var(--line); margin-left: 12px; padding-left: 12px; }
+  .h-kids::before { display: none; }
+  .h-root { align-self: flex-start; }
+  .ladder .cap { display: none; }
+  .notes h2 .pg { display: inline-block; margin: 2px 0 0; vertical-align: 0; }
+}
+@media print {
+  .scope, .toc { display: none !important; }
+  body.s12 .later { display: none !important; }
+}
